@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>OL/UL/LI</h2>
+    <ol type="1" start="10">
+        <li>OL(Ordered List)
+            <!-- ul>li*3 -->
+            <ul>
+                <li>각 항목 앞에 숫자가 붙어서 정렬</li>
+                <li>type 속성 : 순서 목록의 숫자 지정
+                    <ul>
+                        <li>1: 숫자(default)</li>
+                        <li>a: 소문자</li>
+                        <li>A: 대문자</li>
+                        <li>i: 로마소문자</li>
+                        <li>I: 로마대문자</li>
+                    </ul>
+                </li>
+                <li>start 속성 : 목록의 시작 번호 수정</li>
+            </ul>
+        </li>
+        <li>UL(Unordered List)
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+        <li>dl, dt, dd
+            <ul>
+                <li>이름(제목), 값(설명) 형태로 구성되어 있는 목록</li>
+                <li>&lt;dt&gt; 태그 - 이름(제목) 지정</li>
+                <li>&lt;dd&gt; 태그 - 값(설명) 지정</li>
+                <li>하나의 &lt;dt&gt; 에 여러 개의 &lt;dd&gt; 값을 가질 수 있음</li>
+                <li>
+                    <dl>
+                        <dt>이름(제목) 1</dt>
+                        <dd>값(설명) 1</dd>
+                        <dd>값(설명) 1-1</dd>
+                        <dt>이름(제목) 2</dt>
+                        <dd>값(설명) 2</dd>
+                        <dd>값(설명) 2-1</dd>
+                    </dl>
+                </li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>

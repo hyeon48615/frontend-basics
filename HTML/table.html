@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>표(table) 태그</h1>
+    <ul>
+        <li>table, tr, td 태그로 구성</li>
+        <li>rowspan : 줄단위 합치기</li>
+        <li>colspan : 컬럼단위 합치기</li>
+        <li>표의 구조를 제목, 본문, 요약 부분으로 구성</li>
+        <li>thead, tbody, tfoot 태그를 사용</li>
+        <li>(시맨틱 태그 사용 시) 시각 장애인용 디바이스에서도 쉽게 이해 가능</li>
+        <li>자바스크립트로 본문 부분만 스크롤 가능하게 구현 가능</li>
+        <li>col 과, colgroup 태그 : 열을 그룹화할 때 사용</li>
+        <li>scope : 제목을 나타내는 셀의 범위(row 단위, column 단위로 구분) 표시</li>
+    </ul>
+    <table>
+        <caption>테이블 태그 테스트입니다.</caption>
+        <tr>
+            <td>컬럼1</td>
+            <td>컬럼2</td>
+            <td>컬럼3</td>
+            <td>컬럼4</td>
+            <td>컬럼5</td>
+        </tr>
+        <tr>
+            <td>컬럼1</td>
+            <td>컬럼2</td>
+            <td>컬럼3</td>
+            <td colspan="2">컬럼4</td>
+        </tr>
+        <tr>
+            <td rowspan="2">컬럼1</td>
+            <td>컬럼2</td>
+            <td>컬럼3</td>
+            <td>컬럼4</td>
+            <td>컬럼5</td>
+        </tr>
+        <tr>
+            <td>컬럼2</td>
+            <td>컬럼3</td>
+            <td>컬럼4</td>
+            <td>컬럼5</td>
+        </tr>
+    </table>
+    <table>
+        <caption>게시판 자료 입니다.</caption>
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>날짜</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>제목1</td>
+            <td>2025-01-02</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>제목2</td>
+            <td>2025-01-02</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>제목3</td>
+            <td>2025-01-02</td>
+        </tr>
+    </table>
+    
+    <table>
+        <caption>시맨틱 태그의 테이블</caption>
+        <thead>
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+                <th>등록일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>제목1</td>
+                <td>2024-12-31</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>제목2</td>
+                <td>2024-12-31</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>제목3</td>
+                <td>2024-01-01</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <caption>col 과 colgroup 테이블 구성</caption>
+        <colgroup>
+            <col style="background-color: aqua;">
+            <col style="background-color: blueviolet;">
+            <col style="background-color: chartreuse; width: 150px;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+                <th>등록일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>제목1</td>
+                <td>2024-12-31</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>제목2</td>
+                <td>2024-12-31</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>제목3</td>
+                <td>2024-01-01</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
