@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>입력 양식</h1>
+    <ul>
+        <li>form 태그 사용</li>
+        <li>데이터를 전송하기 위한 목적으로 사용</li>
+        <li>&lt;form name=폼이름 action=이동대상URL method=전송방식&gt;</li>
+        <li>name : 폼이름</li>
+        <li>method(전송방식) : GETd(default) / POST</li>
+        <li>GET 방식 : 256 ~ 4096 byte 까지 전송 가능</li><!-- 이론상 4096 byte 가능하지만, 안정적으로 처리 시 2MB 까지 전송 가능 -->
+        <li>POST 방식 : 전송 데이터의 길이 제한이 없음,
+            url 입력창 혹은 전송 스트링 상에 노출 않음
+        </li><!-- 시스템이 받아주는 한 가능 -->
+        <li>action : 서버쪽 URL 지정</li>
+        <li>target : action 에서 지정한 파일을 현재창 혹은 다른 위치에서 동작하도록 지정</li>
+    </ul>
+
+    <h2>폼에서 사용하는 태그의 종류</h2>
+    <ul>
+        <li>fieldset
+            <ul>
+                <li>폼의 요소를 묶는 용도로 사용하는 태그</li>
+                <li>&lt;fieldset [속성=속성값]&gt; ~~ &lt;/fieldset&gt;</li>
+            </ul>
+        </li>
+        <li>legend
+            <ul>
+                <li>그룹으로 묶는 구역에 제목을 붙이는 태그</li>
+                <li>&lt;legend&gt;그룹이름&lt;legend/&gt;</li>
+            </ul>
+        </li>
+        <li>label 태그
+            <ul>
+                <li>input 태그와 같은 폼 요소에 레이블을 붙일 때 사용</li>
+                <li>이름(설명) 구문을 출력할 때 많이 사용</li>
+                <li>암묵적인 방법 : label 태그에 상호작용 요소를 포함</li>
+                <li>명시적인 방법 : label 태그에 for 속성과 대상 대상 태그의 id 속성을 이용하여 설정</li>
+                <li>두 가지 방법을 함께 사용하기도 함</li>
+            </ul>
+        </li>
+        <li>input 태그의 type 속성
+            <ul>
+                <li>text : 한 줄짜리 텍스트를 입력</li>
+                <li>password : 비밀번호를 입력하는 용도(입력된 값이 * 로 표시)</li>
+                <li>search : 검색할 때 입력하는 용도</li>
+                <li>url : URL 주소를 입력하는 필드</li>
+                <li>email : 이베일 주소를 입력하는 필드</li>
+                <li>tel : 전화번호를 입력하는 필드</li>
+                <li>checkbox : 주어진 여러 항목을 1개 이상 선택할 수 있는 체크박스</li>
+                <li>radio : 주어진 여러 항목 중에서 1개만 선택할 수 있는 체크박스</li>
+                <li>number : 숫자를 입력, 조절할 수 있는 UI 출력</li>
+                <li>range : 숫자를 조절할 수 있는 슬라이드 막대 UI 출력</li>
+                <li>date : 사용자 지역 기준 날짜(년, 워, 일) UI 출력</li>
+                <li>month : 사용자 지역 기준 날짜(년, 월) 입력할 수 있는 UI</li>
+                <li>week : 사용자 지역 기준 날짜(년, 주) 입력할 수 있는 UI</li>
+                <li>time : 사용자 지역 기준 시간(시, 분, 초, 분할 초)를 입력할 수 있는 UI</li>
+                <li>datetime : 국제 표준시(UTC)로 설정된 날짜, 시간(년, 월, 일, 시, 분, 초, 분할 초)를 입력할 수 있는 UI</li>
+                <li>datetime-local : 사용자 지역 기준으로 datetime 출력</li>
+                <li>submit : 전송 버튼을 출력, 클릭 시 폼 전송 발생</li>
+                <li>reset : 리셋 버튼을 출력, 클릭 시 폼 항목 초기화</li>
+                <li>image : submit 대신에 이미지를 출력, 클릭 시 폼 전송 발생</li>
+                <li>button : 일반 버튼을 출력</li>
+                <li>file : 파일을 첨부할 수 있는 버튼 출력, 커스터마이징 할 수 없다</li>
+                <li>hidden : 사용자에게 보이지 않지만, 입력된 데이터를 서버로 전달하는 역할</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <form name="폼이름" action="">
+        <fieldset>
+            <legend>상품명</legend>
+            바나나
+        </fieldset>
+        <fieldset>
+            <legend>상품가격</legend>
+            5000원
+        </fieldset>
+        <label>이름 : 
+            <input type="text" name="username" id="username" value=""/>
+        </label>
+        <label for="pwd">비밀번호 </label>
+        <input type="password" name="pwd" id="pwd" value=""/>
+        <label for="addr1">주소1 : 
+            <input type="text" name="addr1" id="addr1" value=""/>
+        </label>
+    </form>
+</body>
+</html>

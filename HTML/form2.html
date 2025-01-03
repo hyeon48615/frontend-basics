@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form 태그의 사용</h1>
+
+    <form name="frm" id="frm">
+        <fieldset>
+            <!-- 묵시적 방법을 통해 label과 input을 연결한다. 사용자 편의성을 위한 개발 -->
+            <label>아이디 : <input type="text" id="user_id" name="user_id" size="20" maxlength="10"/></label>
+            <label>비밀번호 : <input type="password" id="pwd" name="pwd"/></label>
+            <input type="submit" value="로그인"/>
+        </fieldset>
+    </form>
+
+    <form name="frm2" id="frm2" enctype="multipart/form-data">
+        <ul>
+            <li><label>이름 : <input type="text" name="username" 
+                                        value="" maxlength="10" required placeholder="이름을 10자 이내로 입력하세요."/></label></li>
+            <li><label for="addr1">배송주소 :
+                <input type="address" name="addr1" id="addr1" value="" maxlength="100"/>
+            </label></li>
+            <li>
+                <label>이메일 : <input type="email" name="email" id="email" maxlength="200" readonly value="입력된 값"/></label>
+            </li>
+            <li>
+                <label>연락처 : <input type="tel" name="phone" id="phone" value="보여지는 값" maxlength="14" disabled/></label>
+            </li>
+            <li>
+                <label>야구<input type="radio" name="favorite" id="favorite_0" value="야구"/></label>
+                <label>축구<input type="radio" name="favorite" id="favorite_1" value="축구" checked/></label>
+                <label>농구<input type="radio" name="favorite" id="favorite_2" value="농구"/></label>
+                <label>배구<input type="radio" name="favorite" id="favorite_3" value="배구"/></label>
+            </li>
+            <li>
+                <label>야구<input type="checkbox" name="favorite1" id="favorite1_0" value="야구"/></label>
+                <label>축구<input type="checkbox" name="favorite1" id="favorite1_1" value="축구" checked/></label>
+                <label>농구<input type="checkbox" name="favorite1" id="favorite1_2" value="농구"/></label>
+                <label>배구<input type="checkbox" name="favorite1" id="favorite1_3" value="배구"/></label>
+            </li>
+            <li><input type="number" name="num" id="num" value="1" maxlength="10" step="2"/></li>
+            <li><input type="range" name="num2" id="num2" value="1" 
+                        maxlength="10" min="0" max="10" step="2"/></li>
+            <li><input type="datetime-local" name="date1" /></li>
+            <li><input type="submit" value="전송"/></li>
+            <li><input type="image" src="img/cat1.jpg" width="10%" alt="로그인"/></li>
+            <li><input type="button" value="새창오픈하기" onclick="window.open('form.html');"/></li>
+            <li><input type="reset" value="리셋"/></li>
+            <li><input type="file" name="file1"/></li>
+            <li><textarea name="content" rows="3" cols="40" wrap="hard" style="resize: none;"></textarea></li>
+
+            <li>
+                <!-- multiple 옵션에서 selected가 여러 개 지정되어 있다면, 제일 마지막에 지정된 것이 selected 됨-->
+                <select multiple size="15">
+                    <optgroup label="서울시">
+                        <option value="논현동" selected>논현동</option>
+                    </optgroup>
+                    <optgroup label="경기도">
+                        <option value="고양시">고양시</option>
+                        <option value="성남시">성남시</option>
+                        <option value="안양시">안양시</option>
+                    </optgroup>
+                    <option value="귤">귤</option>
+                    <option value="메론">메론</option>
+                </select>
+            </li>
+            <li>글로벌 속성
+                <ul>
+                    <li>모든 태그에서 공통적으로 사용할 수 있는 속성</li>
+                    <li>class 속성 : 요소에 크랠스 값을 지정</li>
+                    <li>id 속성 : 요소에 아이디 값을 지정, 동일 페이지 내에서 유니크해야 함</li>
+                    <li>style 속성 : 요소에 인라인 스타일 지정</li>
+                    <li>title 속성 : 요소에 사용한 텍스트의 정보를 지정(툴팁)</li>
+                    <li>lang 속성 : 요소에 사용한 텍스트의 언어 정보를 지정</li>
+                    <li>hidden 속성 : 요소를 화면에서 숨김(UI 에 노출되지 않을 뿐 데이터는 존재)</li>
+                    <li data-mydata="사용자 정의 속성">data-* 속성 : 해당 요소에 사용자 정의 속성 할당할 때</li>
+                </ul>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>
