@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        /* p { color: red; }
+        p { color: blue; }
+        p { color: orange; } */
+
+        #li1 {
+            color: yellow;
+        }
+
+        ul, ol, li {
+            color: blueviolet;
+        }
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+        div {
+            color: red;
+            font-weight: bold;
+            background-color: blue;
+        }
+        p {
+            font-style: italic;
+        }
+        .accent {
+            border: 1px solid red;
+        }
+        .bg {
+            background-color: aqua;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="basic.css"> -->
+</head>
+<body>
+    
+    <h1 style="font-weight: bold;">브라우저 태그</h1>
+    <h2>h2 태그</h2>
+    <h3>h3 태그</h3>
+    <h4>h4 태그</h4>
+    <h5>h5 태그</h5>
+    <h6>h6 태그</h6>
+    <p>브라우저 기본 태그</p>
+
+    <ul>
+        <li id="li1" class="red">red</li>
+        <li class="blue">blue</li>
+        <li>default</li>
+    </ul>
+
+    <div>기본 div 태그</div>
+    <div>상속 구조의 div 태그
+        <p class="accent">차일드 p <span class="bg">태그</span> 영역</p>
+    </div>
+    <!-- p 태그가 div 태그 안에 위치해 background-color도 상속 받은 것 처럼 보이지만, background-color는 상속되지 못한다. -->
+</body>
+</html>
