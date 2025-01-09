@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배경 꾸미기</h1>
+    <ul>
+        <li>배경색/범위 지정
+            <ul>
+                <li>
+                    background-color 속성
+                    <ul>
+                        <li>웹 문서의 요소에 배경색 지정</li>
+                        <li>16진수, rgb, rgba, 색상이름 사용 가능</li>
+                        <li>배경색은 상속되지 않는다</li>
+                        <li>기본 형식 background-color:색상값</li>
+                    </ul>
+
+                </li>
+                <li>
+                    background-clip 속성
+                    <ul>
+                        <li>배경 적용 영역을 결정</li>
+                        <li>기본형 background-clip : boder-box
+                            | padding-box | content-box </li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>배경 이미지 지정
+
+            <ul>
+                <li>
+                    background-image 속성
+                    <ul>
+                        <li>배경 이미지 파일 경로 지정</li>
+                        <li>기본형 background-image:url(파일경로)</li>
+                    </ul>
+                </li>
+                <li>
+                    background-repeat 속성
+                    <ul>
+                        <li>배경 이미지의 반복여부와 반복 방향 설정</li>
+                        <li>기본형 background-repeat : repeat
+                            repeat-x | repeat-y | no-repeat</li>
+                        <li>repeat : 브라우저 화면에 가득찰때까지 가로, 세로 반복, 기본값</li>
+                        <li>repeat-x : 브라우저 창 너비와 같아질때까지 배경을 가로로 반복</li>
+                        <li>repeat-y : 브라우저 창 너비와 같아질때까지 배경을 세로로 반복</li>
+                        <li>no-repeat : 한번만 표시하고 반복하지 않음</li>
+                        <li>round : 이미지를 반복하되 이미지가 요소에 맞도록 크기를 자동 조절</li>
+                        <li>space : 이미지가 잘리지 않도록 반복</li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    background-position 속성
+                    <ul>
+                        <li>배경 이미지를 반복하지 않을 경우 이미지를 표시할 위치 지정</li>
+                        <li>기본형 background-position: 수평위치 수직위치</li>
+                        <li>수평위치값 : left | center | right | 백분율 | 길이</li>
+                        <li>수직위치값 : top | center | bottom | 백분율 | 길이</li>
+                        <li>px, rem, em, % : 위치를 직접 지정</li>
+                    </ul>
+                </li>
+                <li>background-origin 속성
+                    <ul>
+                        <li>배경 이미지 배치를 위한 기준 설정</li>
+                        <li>기본형 background-origin: border-box 
+                            | padding-box | content-box
+                        </li>
+                        <li>border-box : 박스 모델의 가장 테두리가 기준</li>
+                        <li>padding-box : 박스 모델의 테두리를 뺀 패딩이 기준</li>
+                        <li>content-box : 박스 모델의 내용 부분이 기준</li>
+                    </ul>
+                </li>
+                <li>
+                    background-attatchment 속성
+                    <ul>
+                        <li>배경 이미지를 고정하는 속성</li>
+                        <li>기본형 background-attatchment : scroll | fixed | local</li>
+                        <li>scroll : 화면 스크롤과 함께 배경 이미지도 스크롤 됨, 기본값</li>
+                        <li>fixed : 화면이 스크롤되더라도 배경 이미지는 고정</li>
+                        <li>local : 삽입된 이미지가 요소와 웹 브라우저에서 모두 스크롤</li>
+                    </ul>
+                </li>
+                <li>
+                    background 속성
+                    <ul>
+                        <li>배경 관련 속성을 줄여서 표시</li>
+                        <li>순서는 상관 없음</li>
+                        <li>기본형식 background:
+                            color속성값 이미지속성값 
+                            repeat속성값 position속성값
+                            attacth속성값값
+
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    background-size 속성
+                    <ul>
+                        <li>배경 이미지 크기를 조절</li>
+                        <li>기본형 background-size: auto | contain | cover | 크기 | 백분율</li>
+                        <li>auto : 이미지 크기만큼 표시, 기본값</li>
+                        <li>conain : 요소 안에 배경 이미지가 다 들어오도록 확대/축소</li>
+                        <li>cover : 배경 이미지로 요소를 모두 덮도록 확대/축소</li>
+                        <li>크기 : 이미지의 너비/높이 지정,
+                            하나만 설정하였을 경우 비율에 맞춰서 출력
+                        </li>
+                        <li>백분율 : 배경 이미지가 들어갈 요소의 크기를 기준으로,
+                            그 크기에 맞도록 이미지를 확대/축소
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>효과 적용</li>
+    </ul>
+
+    <hr>
+
+    <style>
+        .desc {
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+            border: 5px dotted #fff;
+            padding:10px;
+            margin-right: 20px;
+            float:left
+        }
+        .clip-border {
+            background-clip: border-box;
+        }
+        .clip-padding {
+            background-clip: padding-box;
+        }
+        .clip-content {
+            background-clip: content-box;
+        }
+
+        .bgimg1 {
+            clear: both;
+            width:300px;
+            height:300px;
+            border: 1px dashed red;
+            background-image: url(./img/espa1.jpg);
+            background-repeat: no-repeat;
+            background-position: left top;
+        }
+        .bgimg2 {
+            clear: both;
+            width:300px;
+            height:300px;
+            position: relative;
+            top:-100px;
+            border: 1px dashed blue;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+        }
+        .li_img1 {
+            height: 40px;
+            width:60px;
+            background-image: url(./img/bee_640.png);
+            background-repeat: no-repeat;
+            background-position: 10% 10%;
+            list-style-type: none;
+            text-align: right;
+        }
+        .bgimg {
+            clear: both;
+            width:200px;
+            height:200px;
+            background-image: url(./img/bee_640.png);
+            background-repeat: no-repeat;
+            border: 10px dashed blue;
+            margin:20px;
+            padding: 30px;
+        }
+        .bgorigin-border {
+            background-origin: border-box;
+        }
+        .bgorigin-pad {
+            background-origin: padding-box;
+        }
+        .bgorigin-cont {
+            background-origin: content-box;
+        }
+        .bgattach {
+            background-attachment: fixed;
+            background-image: url(./img/bee_640.png);
+            background-repeat: no-repeat;
+        }
+        .bgimg2 {
+            clear: both;
+            width:200px;
+            height:200px;
+            background-image: url(./img/bee_640.png);
+            background-repeat: no-repeat;
+            border: 10px dashed blue;
+        }
+        .bgauto {
+            background-size:auto;
+        }
+        .bgcontain {
+            background-size:contain;
+        }
+        .bgcover {
+            background-size:cover;
+        }
+        .bgsize {
+            background-size:50px;
+        }
+        .bgpercent {
+            background-size:50%;
+        }
+</style>
+    <h2>배경색 지정</h2>
+    <div id="container">
+        <div id="con1">
+            <div class="desc clip-border" id="box1">
+                컨테츠의 내용이 보여집니다.
+            </div>
+            <div class="desc clip-padding" id="box2">
+                컨테츠의 내용이 보여집니다.
+            </div>
+            <div class="desc clip-content" id="box3">
+                컨테츠의 내용이 보여집니다.
+            </div>
+        </div>
+
+        <div id="con2">
+            <div class="bgimg1">
+                배경 이미지 내용이 보여집니다.
+            </div>
+            <div class="bgimg2">
+                텍스트 내용이 보여집니다.
+            </div>
+            <ul>
+                <li class="li_img1">메뉴1</li>
+                <li class="li_img1">메뉴2</li>
+                <li class="li_img1">메뉴3</li>
+            </ul>
+        </div>
+    
+        <div id="con3">
+            <div class="bgimg bgorigin-border">배경 이미지1</div>
+            <div class="bgimg bgorigin-pad">배경 이미지2</div>
+            <div class="bgimg bgorigin-cont">배경 이미지3</div>
+        </div>
+
+        <div id="con4">
+            <div class="bgimg2 bgauto">auto</div>
+            <div class="bgimg2 bgcontain">contain</div>
+            <div class="bgimg2 bgcover">cover</div>
+            <div class="bgimg2 bgsize">size</div>
+            <div class="bgimg2 bgpercent">percent</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>그라데이션 효과</h1>
+    <ul>
+        <li>
+            선형 그라데이션
+            <ul>
+                <li>수직, 수평, 대각선 방향으로 생삭이 일정하게 변하게 하는 것</li>
+                <li>선형 그라데이션을 지정할 때, 방향, 생삭이 필요</li>
+                <li>기본형 linear-gradient(
+                    to 방향/각도, 
+                    색상중지점1, [색상중지점2,,,,,])</li>
+                <li>
+                    방향
+                    <ul>
+                        <li>to 방향 지정</li>
+                        <li>to right bottom</li>
+                        <li>to left top</li>
+                        <li>background:linear-gradient(to right bottom, blue, white,,,)</li>
+                    </ul>
+                </li>
+                <li>
+                    각도
+                    <ul>
+                        <li>그라데이션이 끝나는 각도</li>
+                        <li>단위 deg</li>
+                        <li>background:linear-gradient(45deg, blue, white,,,)</li>
+                    </ul>
+                </li>
+                <li>
+                    색상중지점
+                    <ul>
+                        <li>색상이 바뀌는 지점</li>
+                        <li>색상만 지정할 수도 있고, 중지점 위치도 함께 지정 가능</li>
+                        <li>background:linear-gradient(to bottom, 색지정, 중지점색상과 위치, 끝색상)</li>
+                        <li>background:linear-gradient(to bottom, red, white 30%, blue)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
