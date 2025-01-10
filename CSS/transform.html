@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Transform(변형, 트랜스폼)</h1>
+    <ul>
+        <li>특정 요소의 크기나 형태 등의 스타일을 바꾸는 것</li>
+        <li>2차원 변형
+            <ul>
+                <li>수평이나 수직으로 웹 요소를 변형</li>
+                <li>크기, 각도만 지정</li>
+                <li>2차원 좌표 사용</li>
+                <li>translate(tx, ty) - 지정한 크기만큼 해당 축을 이동</li>
+                <li>translateX(tx) - x축으로 이동</li>
+                <li>translateY(ty) - y축으로 이동</li>
+                <li>scale(sx, sy) - 지정한 크기만큼 해당 축으로 확대, 축소</li>
+                <li>scaleX(sx) - 지정한 크기만큼 x축으로 확대, 축소</li>
+                <li>scaleY(sy) - 지정한 크기만큼 y축으로 확대, 축소</li>
+                <li>rotate(각도) - 지정한 각도만큼 회전</li>
+                <li>skew(ax, ay) - 지정한 각도만큼 해당 축으로 왜곡</li>
+                <li>skewX(ax) - 지정한 각도만큼 x축으로 왜곡</li>
+                <li>skewY(ay) - 지정한 각도만큼 y축으로 왜곡</li>
+            </ul>
+        </li>
+        <li>3차원 변형
+            <ul>
+                <li>x축과 y축에 원근감(z축) 추가</li>
+                <li>z축은 앞뒤로 이동, 보는 사람쪽으로 다가올수록 더 큰 값을 가짐</li>
+                <li>translate3d(tx, ty, tz) - 지정한 크기만큼 해당 축을 이동</li>
+                <li>translateZ(tz) - z축으로 이동</li>
+                <li>scale3d(sx, sy, sz) - 지정한 크기만큼 해당 축으로 확대, 축소</li>
+                <li>scaleZ(sz) - 지정한 크기만큼 z축으로 확대, 축소</li>
+                <li>rotate3d(각도) - 지정한 각도만큼 해당 축 기준으로 회전</li>
+                <li>rotateX(각도) - 지정한 각도만큼 해당 축 기준으로 회전</li>
+                <li>rotateY(각도) - 지정한 각도만큼 해당 축 기준으로 회전</li>
+                <li>rotateZ(각도) - 지정한 각도만큼 해당 축 기준으로 회전</li>
+                <li>perspective(길이) - 입체적으로 보일 수 있도록 깊이 값을 지정</li>
+            </ul>
+        </li>
+        <li>transform-origin 속성
+            <ul>
+                <li>변형 효과의 기준점을 변경할 때</li>
+                <li>기본 형식 transform-origin : x축위치 y축위치</li>
+                <li>x축위치 : left / center / right</li>
+                <li>y축위치 : top / center / bottom</li>
+            </ul>
+        </li>
+        <li>translate 함수
+            <ul>
+                <li>지정한 방향으로 이동할 거리를 지정</li>
+                <li>기본형 transform: 트랜스함수</li>
+                <li>transform: translate(tx, ty)</li>
+                <li>transform: translate3d(tx, ty, tz) - 지정한 크기만큼 이동</li>
+                <li>transform: translateX(tx) - x축으로 이동</li>
+                <li>transform: translateY(ty) - y축으로 이동</li>
+                <li>transform: translateZ(tz) - z축으로 이동</li>
+            </ul>
+        </li>
+        <li>트랜지션(전환, Transition)
+            <ul>
+                <li>웹 요소의 스타일 속성이 조금씩 변하는 것</li>
+                <li>transition-property: 트랜지션의 대상을 지정</li>
+                <li>transition-duration: 실행할 시간을 지정</li>
+                <li>transition-timing-function: 실행 형태를 지정</li>
+                <li>transition-delay: 트랜지션의 지연 시간을 지정</li>
+                <li>transition: 위의 4가지 속성을 한번에 지정</li>
+                <li>trasition-property 속성
+                    <ul>
+                        <li>트랜지션을 적용할 속성 선택</li>
+                        <li>지정하지 않으면 요소의 모든 속성이 대상이 됨</li>
+                        <li>all : 속성값을 all 로 지정하거나 지정하지 않으면 모든 속성 대상</li>
+                        <li>none : 트랜지션을 적용하는 동안 아무 속성도 바뀌지 않음</li>
+                        <li>속성이름 : 트랜지션을 적용하고 싶은 속성, 콤마(,)로 구분하여 여러 개 지정 가능</li>
+                    </ul>
+                </li>
+                <li>transition-duration
+                    <ul>
+                        <li>트랜지션의 진행 시간을 지정</li>
+                        <li>시간단위 : 초, 밀리초</li>
+                        <li>여러개일 경우 , 로 구분하여 지정</li>
+                        <li>어떤 요소에 전환 효과를 지정하려면 반드시 transition-property 와 transition-duration 속성을 함께 지정해야 함</li>
+                        <li>기본형 trasition-duration: 시간 [,시간,,,]</li>
+                    </ul>
+                </li>
+                <li>transition-delay
+                    <ul>
+                        <li>트랜지션이 언제부터 시작될지 지연 시간 설정</li>
+                        <li>시간단위 초, 밀리초, 기본값 : 0</li>
+                        <li>기본형 transition-delay: 시간</li>
+                    </ul>
+                </li>
+                <li>transition-timing-function
+                    <ul>
+                        <li>트랜지션의 시작과 중간, 끝에서의 속도 지정</li>
+                        <li>기본형 transition-timing-function: 값</li>
+                        <li>ease: 처음에는 천천히 시작하고 점점 빨라지다가 천천히 끝남, 기본값</li>
+                        <li>linear : 시작부터 끝까지 같은 속도</li>
+                        <li>ease-in : 느리게 시작</li>
+                        <li>ease-out : 느리게 끝남</li>
+                        <li>ease-in-out : 느리게 시작하고 느리게 끝남</li>
+                        <li>cubic-bezier(n, n, n, n) : 배지에 함수를 정의하여 사용
+                            n값 : 0~1 사이값만 사용</li>
+                    </ul>
+                </li>
+                <li>transition 속성
+                    <ul>
+                        <li>트랜지션 관련 속성을 한꺼번에 지정</li>
+                        <li>시간 값 속성이 2개이므로, 앞에 오는 시간은 transition-duration,
+                            뒤에 오는 시간은 transition-delay 속성
+                        </li>
+                        <li>기본형 transition: transition-property값 transition-duration값
+                            transition-timing-function값 transition-delay값
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <style>
+        .container {
+            width: 800px;
+            height: 200px;
+            margin: 20px auto;
+        }
+        .origin1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: left;
+            margin: 40px;
+        }
+        .origin1 > div {
+            width: 100px;
+            height: 100px;
+            background-color: darkorange;
+        }
+        #moveX:hover {
+            transform: translateX(50px);
+        }
+        #moveY:hover {
+            transform: translateY(-50px);
+        }
+        #moveXY:hover {
+            transform: translate(10px, 20px);
+        }
+    </style>
+
+    <h2>트랜지션</h2>
+    <h3>translate 함수</h3>
+    <div class="container">
+        <div class="origin1">
+            <div id="moveX"></div>
+        </div>
+        <div class="origin1">
+            <div id="moveY"></div>
+        </div>
+        <div class="origin1">
+            <div id="moveXY"></div>
+        </div>
+    </div>
+
+    <style>
+        .origin2 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: left;
+            margin: 40px;
+        }
+        .origin2 > div {
+            width: 100px;
+            height: 100px;
+            background-color: darkorange;
+        }
+        #scaleX:hover {
+            transform: scaleX(2);
+        }
+        #scaleY:hover {
+            transform: scaleY(1.5);
+        }
+        #scale:hover {
+            transform: scale(0.5);
+        }
+    </style>
+
+    <h3>scale 함수</h3>
+    <div class="container">
+        <div class="origin2">
+            <div id="scaleX"></div>
+        </div>
+        <div class="origin2">
+            <div id="scaleY"></div>
+        </div>
+        <div class="origin2">
+            <div id="scale"></div>
+        </div>
+    </div>
+
+    <style>
+        .origin3 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: left;
+            margin: 40px;
+        }
+        #rotate1:hover {
+            transform: rotate(40deg);
+        }
+        #rotate2:hover {
+            transform: rotate(-40deg);
+        }
+    </style>
+
+    <h3>rotate 함수</h3>
+    <div class="container">
+        <div class="origin3">
+            <div id="rotate1">
+                <img src="img/cat1.jpg" width="100" height="100" />
+            </div>
+        </div>
+        <div class="origin3">
+            <div id="rotate2">
+                <img src="img/cat1.jpg" width="100" height="100" />
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .origin4 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: left;
+            margin: 40px;
+        }
+        .origin4 > div {
+            width: 100px;
+            height: 100px;
+            background-color: darkorange;
+        }
+        #skewX:hover {
+            transform: skewX(30deg);
+        }
+        #skewY:hover {
+            transform: skewY(15deg);
+        }
+        #skewXY:hover {
+            transform: skew(-40deg, -10deg);
+        }
+    </style>
+
+    <h3>skew 함수</h3>
+    <div class="container">
+        <div class="origin4">
+            <div id="skewX"></div>
+        </div>
+        <div class="origin4">
+            <div id="skewY"></div>
+        </div>
+        <div class="origin4">
+            <div id="skewXY"></div>
+        </div>
+    </div>
+
+    <style>
+        .origin5 {
+            margin: 40px;
+            border: 1px solid black;
+            float: left;
+        }
+        .origin5 > div {
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border: 1px solid red;
+            float: left;
+        }
+        .box1 {
+            transition-property: width, height;
+            transition-duration: 2s, 1s;
+        }
+        .box2 {
+            transition-property: width, height;
+        }
+        .box3 {
+            transition-property: background-color, color, width;
+            transition-duration: 1s, 2s;
+            transition-delay: 0.3s;
+        }
+        .box1:hover {
+            width: 200px;
+            height: 200px;
+        }
+        .box2:hover {
+            width: 200px;
+            height: 200px;
+        }
+        .box3:hover {
+            background-color: blue;
+            width:300px;
+        }
+    </style>
+
+    <h3>트랜지션 함수</h3>
+    <div class="container">
+        <div class="origin5">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+    </div>
+</body>
+</html>
