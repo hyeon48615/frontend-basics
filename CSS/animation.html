@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>애니메이션</h1>
+    <ul>
+        <li>웹 요소에 애니메이션 기능 추가</li>
+        <li>애니메이션을 시작해 끝나는 동안 원하는 곳에서
+            스트일을 바꾸면서 애니메이션을 정의할 수 있음
+        </li>
+        <li>키프레임(keyframe) : 애니메이션 중간에 스타일이 바뀌는 지점점</li>
+        <li>@keyframes : 애니메이션이 바뀌는 지점</li>
+        <li>animation-delay : 애니메이션의 시작 시간을 지정</li>
+        <li>animation-direction : 종료된 뒤 처음부터 시작할지 역방향으로 진행할지 지정</li>
+        <li>animation-duration : 애니메이션의 실행 시간 지정</li>
+        <li>animation-iteration-count : 애니메이션의 반복 횟수 지정</li>
+        <li>animation-name : @keyframe으로 설정한 중간 상태 지정</li>
+        <li>animation-timing-function : 키프레임의 전환 형태를 지정</li>
+        <li>animation : animation 속성을 한번에 지정</li>
+    </ul>
+    <ul>
+        <li>@keyframes 속성
+            <ul>
+                <li>애니메이션의 시작과 끝의 상태가 바뀌는 지점 설정</li>
+                <li>[이름] 으로 애니메이션을 구분</li>
+                <li>@keyframe 의 선택자에서 속성값이 바뀌는 지점을 가리킴</li>
+                <li>시작 위치는 0%, 끝 위치는 100%로 놓고 위치 지정</li>
+                <li>시작과 끝 위치만 사용하면 from, to 키워드를 사용 가능</li>
+                <li>기본형 
+                    @keyframes 이름 {
+                        선택자 { 스타일 }
+                    }
+                    @keyframes 이름 {
+                        0% { CSS 코드 }
+                        n% { CSS 코드 }
+                        100% { CSS 코드 }
+                    }
+                </li>
+            </ul>
+        </li>
+        <li>
+            animation-name 속성
+            <ul>
+                <li>어떤 애니매이션을 사용할지 구변</li>
+                <li>@keyframes 속성에서 만든 애니메이션 이름을 사용</li>
+                <li>기본형 animation-name 키프레임이름 | none</li>
+            </ul>
+        </li>
+        <li>
+            animation-duration 속성
+            <ul>
+                <li>애니메이션 실행시간 설정, 기본값 : 0</li>
+                <li>사용 가능한 값 : 초, 밀리초</li>
+                <li>애니메이션은 키프레임, animation-name, animation-duration 
+                    3가지를 필수로 지정해야 함</li>
+                <li>기본형 animation-duration : 시간</li>
+            </ul>
+        </li>
+        <li>animation-delay 속성
+            <ul>
+                <li>애니메이션 지연 시간을 설정</li>
+                <li>기본형 animation-delay : 지연시간간</li>
+                <li></li>
+            </ul>
+        </li>
+        <li>animation-direction 속성
+            <ul>
+                <li>애니메이션이 끝난 후 원래 위치로 돌아거나, 반대 방향으로 실행하도록 설정</li>
+                <li>기본형 animation-direction: normal | alternate</li>
+                <li>normal : 끝까지 실행하면 원래 위치로 돌아감, 기본값</li>
+                <li>alternate : 끝까지 실행하면 되돌아가면서 다시 실행</li>
+                <li>reverse : 키프레임에 정의된 시간 역순으로 진행 (from ->to)</li>
+                <li>alternate-reverse : 애니메이션이 1회 이상 실행될 경우 
+                    홀수 번째는 reverse,
+                    짝수 번째는 normal 로 진행
+                </li>
+            </ul>
+        </li>
+        <li>animation-iteration-count 속성
+            <ul>
+                <li>애니메이션의 반복 횟수 지정</li>
+                <li>기본형 animation-iteration-count : 숫자 | infinite</li>
+                <li>숫자 : 반복 횟수</li>
+                <li>infinite : 무한 반복</li>
+            </ul>
+        </li>
+        <li>
+            animation-play-state 속성
+            <ul>
+                <li>애니메이션의 진행/정지 상태를 정의의</li>
+                <li>기본형 animation-play-state: 속성값</li>
+                <li>paused : 일시 정지</li>
+                <li>running : 실행</li>
+            </ul>
+        </li>
+        <li>animation-timing-function 속성
+            <ul>
+                <li>애니메이션 속도 속선을 지정</li>
+            </ul>
+        </li>
+        <li>animation 속성
+            <ul>
+                <li>여러 개의 animation 속성을 하나의 속성으로 줄여서 사용</li>
+                <li>지정하지 않은 속성은 기본 값을 사용</li>
+                <li>animation-duration 값은 반드시 지정해야 함</li>
+                <li>기본형 animation: 이름 duration timing-function delay
+                    iteration-count direction fill-mode play-state
+                </li>
+                <li>animation : bgchange 5s 3 ease-in</li>
+            </ul>
+        </li>
+        <li>animation-fill-mode 속성
+            <ul>
+                <li>애니메이션의 시작과 끝을 비롯해 상태가 바뀌는 지점을 설정</li>
+                <li>이름 으로 애니메이션을 구분</li>
+                <li>none : 실행전 - 시작시점(0%, from) 의 스타일을 적용하지 않고 대기
+                    실행후 - 실행되기 전의 스타일 적용 상태로 변경
+                </li>
+                <li>forward : 실행전 - 시작시점(0%, from) 의 스타일을 적용하지 않고 대기
+                    실행후 - 키프레임에 정의된 종료시점(100%, to)의 스타일을 적용하고 대기
+                </li>
+                <li>backwards :
+                    실행전 - 시작시점(0%, from) 의 스타일을 적용하지 않고 대기
+                    실행수 - 실행되기 전의 스타일 적용 상태로
+                </li>
+                <li>both :
+                    실행전 - 키프레임에 정의된 시작 시점(0%, from) 의 스타일 적용하고 대기
+                    실행후 - 키프레임에 정의된 종료 시점(100%, to) 의 스타일 적용하고 대기
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+        </li>
+    </ul>
+
+    <style>
+        .container {
+            width : 800px;
+            margin: 60px auto;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin: 10px 50px;
+        }
+        #box1 {
+            background-color: blueviolet;
+            border: 1px solid transparent;
+            animation-name: shape;
+            animation-duration: 3s;
+        }
+        #box2 {
+            background-color: yellow;
+            border: 1px solid transparent;
+            animation-name: rotate;
+            animation-duration: 3s;
+        }
+
+        @keyframes shape {
+            from {
+                border:1px solid transparent;
+            }
+            to {
+                border: 1px solid #000;
+                border-radius: 50%;
+            }
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(45deg);
+            }
+        }
+
+        /*반복지정*/
+        #box3 {
+            background-color: blueviolet;
+            border: 1px solid transparent;
+            animation-name: shape2;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        #box4 {
+            background-color: yellow;
+            border: 1px solid transparent;
+            animation-name: rotate2;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes shape2 {
+            from {
+                border:1px solid transparent;
+            }
+            to {
+                border: 1px solid #000;
+                border-radius: 50%;
+            }
+        }
+        @keyframes rotate2 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(45deg);
+            }
+        }
+
+        #box5 {
+            margin: 60px auto;
+            border: 1px solid transparent;
+            animation: rotate3 1.5s infinite, bg 1.5s infinite alternate;
+        }
+        @keyframes rotate3 {
+            from {transform: perspective(120px) rotateX(0deg) rotateY(0deg)}
+            50% {transform: perspective(120px) rotateX(-180deg) rotateY(0deg)}
+            from {transform: perspective(120px) rotateX(-180deg) rotateY(-180deg)}
+        }
+        @keyframes bg {
+            from { background-color: green;}
+            50% { background-color: orange;}
+            to { background-color: red;}
+        }
+
+        #box6 {
+            margin: 60px auto;
+            border: 1px solid transparent;
+            animation-name: bgchange2;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-delay: 4s;
+            animation-iteration-count: 3;
+        }
+        @keyframes bgchange2 {
+            0% { background-color: red;}
+            25% { background-color: orange;}
+            50% { background-color: yellow;}
+            100% { background-color: green;}
+        }
+
+        .container2 {
+            width : 800px;
+            margin: 60px auto;
+            clear:left;
+        }
+        #box7 {
+            background-color: red;
+            position: relative;
+            animation-name: move;
+            animation-duration: 10s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+        @keyframes move {
+            from {left:0}
+            to {
+                left:300px;
+            }
+        }
+</style>
+    <hr>
+    <h2>애니메이션</h2>
+    <div class="container">
+        <div id="box1" class="box"></div>
+        <div id="box2" class="box"></div>
+    </div>
+    <div class="container">
+        <div id="box3" class="box"></div>
+        <div id="box4" class="box"></div>
+    </div>
+    <div class="container">
+        <div id="box5" class="box"></div>
+    </div>
+    <div class="container">
+        <div id="box6" class="box"></div>
+    </div>
+
+
+    <div class="container2">
+        <div id="box7" class="box"></div>
+
+        <button id="start">start</button>
+        <button id="paused">paused</button>
+    </div>
+<script>
+    const box7 = document.getElementById("box7");
+    document.getElementById("start").addEventListener("click", function(){
+        box7.style.animationPlayState = "running";
+    });
+    document.getElementById("paused").addEventListener("click", function(){
+        box7.style.animationPlayState = "paused";
+    });
+</script>
+
+
+
+</body>
+</html>

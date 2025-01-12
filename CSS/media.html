@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>미디어쿼리</h1>
+    <ul>
+        <li>미디어 쿼리의 기본 형식
+            <ul>
+                <li>기본형 @media <not | only> 미디어타입 
+                    and (추가 속성들 and | or | not ,,,,,)
+                    { CSS 코드 }
+                </li>
+                <li>not : 뒤에 오는 모든 조건을 부정</li>
+                <li>only : 미디어 쿼리르 지원하는 기기만</li>
+                <li>
+                    미디어타입(media type) : 미디어 쿼리가 적용될 미디어 종류
+                    <ul>
+                        <li>all : 모든 기기</li>
+                        <li>print : 인쇄장치</li>
+                        <li>screen : 컴퓨터, 스마트기기의 화면 </li>
+                        <li>speech : 스크린 리더기 같은 소리를 내어 읽어주는 장치</li>
+                    </ul>
+                </li>
+                <li> 
+                    media feature : 미디어 쿼리가 적용될 미디어의 조건
+                    <ul>
+                        <li>min-width 화면너비 : 미디어 쿼리가 적용될 최소너비 </li>
+                        <li>max-width 화면너비 : 미디어 쿼리가 적용될 최대너비</li>
+                        <li>orientation portrait : 세로모드, 
+                            뷰포트의 세로 높이가 가로 너비보다 큰 경우</li>
+                        <li>orientation landscape : 가로모드,
+                            뷰포트의 가로 너비가 세로 높이보다 큰 경우
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>웹문서 기준
+            <ul>
+                <li>width, height : 웹페이지의 가로, 세로</li>
+                <li>min-width, min-height : 웹페이지의 최소 너비, 높이</li>
+                <li>max-width, max-height : 웹페이지의 최대 너비, 높이이</li>
+            </ul>
+        </li>
+        <li>
+            단말기 기준
+            <ul>
+                <li>device-width, device-height : 단말기의 가로, 세로</li>
+                <li>min-deivce-width, min-device-height : 단말기의 최소 너비, 높이</li>
+                <li>max-deivce-width, max-device-height : 단말기의 최대대 너비, 높이</li>
+            </ul>
+        </li>
+        <li>회전
+            <ul>
+                <li>orientation : portrait - 단말기 세로모드</li>
+                <li>orientation : landscape - 단말기 가로모드</li>
+            </ul>
+        </li>
+        <li>
+            화면 너비가 1440px 이상일 때
+            @media screen and (min-width: 1440px) {
+            }
+        </li>
+        <li>
+            iphoneX 를 가로모드로
+            @media screen and(min-device-width: 375px) and (min-device-height:812px) {
+
+            }
+        </li>
+        <li>
+            미디어 쿼리의 중단점
+            <ul>
+                <li>중단점(breakpoint) : 서로 다른 CSS 를 적용할 화면의 크기</li>
+                <li>대부분 기기의 화면 크기 기준</li>
+                <li>모바일, 태블릿, PC 기준으로 구분</li>
+                <li>PC 개발 -> 모바일 버전으로 개발 => 모바일 -> PC 개발</li>
+            </ul>
+        </li>
+        <li>
+            미디어쿼리 적용
+            <ul>
+                <li>1. 외부 css 파일 연결
+                    <ul>
+                        <li>1. link 태그 사용
+                            <ul>
+                                <li>head 태그 내부에 정의</li>
+                                <li>기본형 &lt;link rel="stylesheet" media="미디어쿼리조건" href="css파일경로"&gt;</li>
+                                <li>&lt;link rel="stylesheet" media="screen" href="./css/common.css"&gt;</li>
+                            </ul>
+                        </li>
+                        <li>2. @import 구문 사용
+                            <ul>
+                                <li>style 구분 사이에 삽입</li>
+                                <li>기본형 @import url(css파일경로) 미디어쿼리조건설정</li>
+                                <li>@import url("./css/table.css") only screen and (min-width:321px) and (max-width:768px);</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    2. 웹 문서에 직접 정의
+                    <ul>
+                        <li>1. style 태그 안에서 media 속성 정의
+                            <ul>
+                                <li>기본형 &lt;style media="조건"&gt; { CSS 작성 }&lt;/style&gt; </li>
+                            </ul>
+                        </li>
+                        <li>2. @media 문 사용
+                            <ul>
+                                <li>기본형 &lt;style&gt; @media 조건 { CSS 작성 } &lt;/style&gt;</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+        <li>레이아웃
+            <ul>
+                <li>
+                    그리드 레이아웃
+                    <ul>
+                        <li>반응형 웹 디자인에서 웹 문서 요소를 배치하는 기준</li>
+                        <li>웹사이트 화면을 여러 개의 컬럼으로 나눈 후 웹 요소를 배치</li>
+                        <li>화면을 규칙적으로 일관성 있게 유지할 수 있음음</li>
+                        <li>시각적으로 안정된 디자인</li>
+                        <li>업데이트가 편한 웹 디자인 구성</li>
+                        <li>요소를 자유롭게 배치</li>
+                    </ul>
+                </li>
+                <li>레이아웃 작성 방법
+                    <ul>
+                        <li>1. 플렉스박스 레이아웃
+                            <ul>
+                                <li>수평 방향이나 수직 방향 중 하나를 주축으로 정하고 박스를 배치</li>
+                                <li>여유 공간이 생길 경우 너비나 높이를 적절하게 늘리거나 줄일 수 있음음</li>
+                                <li>플렉스 컨테이너(부모박스) : 플렉스 박스 레이아웃을 적용할 대상을 묶는 역할</li>
+                                <li>플렉스 항목/아이템(자식박스) : 플렉스 박스 레이아웃을 적용할 대상</li>
+                                <li>주축(main axis) : 플렉스 컨테이너 안에서 플렉스 항목을 배치하는 기준
+                                    , 기본값 왼쪽->오른쪽
+                                    , 플렉스 항목이 배치가 시작되는 부분 -> 주축시작점
+                                    , 항목 배치가 끝나는 지점 -> 주축끝점
+                                </li>
+                                <li>
+                                    교차축(cross axis): 주축과 교차하는 방향,
+                                    기본값 위에서 아래로 배치
+                                    , 플렉스 항목의 배치가 시작되는 부분 -> 교차축 시작점
+                                    , 배치가 끝나는 부분 -> 교차축 끝점
+                                </li>
+                                <li>display 속성
+                                    <ul>
+                                        <li>배치 요소를 감싸는 부모 요소를 플렉스 컨테이너로 지정</li>
+                                        <li>flex : 컨테이너 안의 플렉스 항목을 블록 레벨로 요소로 배치</li>
+                                        <li>inline-flex : 컨테이너 안의 플렉스 항목을 인라인 레벨 요소로 배치</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    felx-direction 속성
+                                    <ul>
+                                        <li>플렉스 항목의 배치를 위해 주축, 방향을 지정</li>
+                                        <li>row : 주축을 가로로 지정, 왼쪽에서 오른쪽으로 배치, 기본값</li>
+                                        <li>row-reverse : 주축을 가로로 지정, 오른쪽->왼쪽으로 배치</li>
+                                        <li>column : 주축을 세로로 지정, 위쪽->아래래쪽으로 배치</li>
+                                        <li>column-reverse : 주축을 세로로 지정, 아래쪽->위쪽으로 배치치</li>
+                                        <li></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    flex-wrap 속성
+                                    <ul>
+                                        <li>플레스 항목을 한 줄 또는 여러 줄로 배치</li>
+                                        <li>nowrap : 한 줄에 표시, 기본값</li>
+                                        <li>wrap : 여러 줄에 표시</li>
+                                        <li>wrap-reverse : 여러 줄에 표시, 시작점과 끝점이 바뀜</li>
+                                    </ul>
+                                </li>
+                                <li>flex-flow 속성
+                                    <ul>
+                                        <li>플렉스 배칭 방향과 여러 줄 배치를 한꺼번에 지정</li>
+                                        <li>기본형 flex-flow : row no-wrap</li>
+                                    </ul>
+                                </li>
+                                <li>justify-content 속성
+                                    <ul>
+                                        <li>플레스 항목을 주축 방향으로 배치할 때 배치 기준</li>
+                                        <li>flex-start : 주축의 시작점에 맞춰서 배치</li>
+                                        <li>flex-end : 주축의 끝점에 맞춰 배치</li>
+                                        <li>center : 주축의 중앙에 맞춰 배치</li>
+                                        <li>space-between : 첫 번째 항목을 주축 시작에 맞추고, 끝 항목을 주축의 끝에 맞춘후
+                                            , 각 항목 사이의 간격 동일하게 배치
+                                        </li>
+                                        <li>space-around : 모든 항목을 주축에 같은 간격으로 배치</li>
+                                        <li>space-evenly : 플레스 아이템 사이와 양끝의 간격이 균일하게 배치</li>
+                                        <li></li>
+                                    </ul>
+                                </li>
+                                <li>align-item 속성, align-self 속성
+                                    <ul>
+                                        <li>교차축을 기준으로 하는 배치 방법을 조절</li>
+                                        <li>교차축에서 특정 항목만 지정하고 싶을 때 
+                                            align-self 를 사용 -> 해당 항목 요소에 사용</li>
+                                        <li>align-content 속성 : 플렉스 아이템이 두 줄 이상일때 교차축 방향으로 정렬</li>
+                                        <li>align-self 속성 : 각각의 플레스 아이템을 교차축 방향으로 정렬
+                                            , align-items 속성으로 플렉스 아이템을 한 번에 정렬하지 않고 각각 정렬하고 싶을 때 사용
+                                        </li>
+                                        <li>flex-start : 교차축의 시작점에 맞춰서 배치</li>
+                                        <li>flex-end : 교차축의 끝점에 맞춰서 배치</li>
+                                        <li>center : 교차축의 중앙에 배치</li>
+                                        <li>baseline : 교차축의 문자 기준선에 맞춰 배치</li>
+                                        <li>stretch : 플렉스 항목을 늘려서 교차축에 가득차게 배치</li>
+                                    </ul>                                    
+                                </li>
+                                <li>align-content 속성
+                                    <ul>
+                                        <li>플레스 항목이 여러 줄로 표시될 때 교차축 기준의 배치 방법 설정</li>
+                                        <li>flex-start : 교차축 시작점에 맞춰 배치</li>
+                                        <li>flex-end : 교차축의 끝점에 맞춰서 배치</li>
+                                        <li>center : 교차축의 중앙에 배치</li>
+                                        <li>space-between : 첫 번째 항목을 교차축 시작점과 끝점에 맞추고, 
+                                            각 항목 사이의 간격 동일하게 배치
+                                        </li>
+                                        <li>space-around : 모든 항목을 교차축에 같은 간격으로 배치</li>
+                                        <li>stretch : 플렉스 항목을 늘려서 교차축에 가득차게 배치</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>2. CSS 그리드 레이아웃
+                            <ul>
+                                <li>최근에 등장한 CSS 표준</li>
+                                <li>수평 방향이나 수직 방향 어디로든 배치 가능</li>
+                                <li>레고 블록 끼우듯 요소를 배치할 수 있음</li>
+                                <li>레이아웃 양쪽 방향을 모두 사용</li>
+                                <li>줄(row), 컬럼(column) 으로 화면을 구성, 줄 사이의 여백, 컬럼 사이의 여백을 조절</li>
+                                <li>행(row) : 그리드 레이아웃의 가로줄</li>
+                                <li>열(column) : 그리드 레이아웃의 세로줄</li>
+                                <li>그리드셀(grid cell) : 행과 열이 만나서 이루는 사각형</li>
+                                <li>그리드갭(grid gap) : 셀과 셀사이의 공간</li>
+                                <li>그리드아이템(grid item) : 그리드 셀 안에 포함되는 컨텐츠</li>
+                                <li>그리드라인(grid line) : 그리드 행과 열을 그리는 선</li>
+                                <li>그리드넘버(grid number) : 그리드 라인에 붙이는 번호</li>
+                                <li>그리드컨테이너(grid cotainer) : 그리드 아이템을 묶는 부모 요소</li>
+                                <li>display 속성
+                                    <ul>
+                                        <li>배치 요소를 감싸는 요소를 그리드 컨테이너로 지정</li>
+                                        <li>grid : 컨테이너 안의 항목을 블럭레벨 요소로 배치</li>
+                                        <li>inline-grid : 인라인 레벨 요소로 배치</li>
+                                    </ul>
+                                </li>
+                                <li>grid-template-columns, grid-template-rows 속성
+                                    <ul>
+                                        <li>grid-template-columns : 그리드 컨테이너 안의 컬럼 개수, 너비 값</li>
+                                        <li>grid-template-rows : 그리드 컨테이너 안의 줄의 개수, 너비값</li>
+                                        <li>기본형 grid-template-columns : 1열값, 2열값,,,,,</li>
+                                        <li>기본형 grid-tempalte-rows : 1행값, 2행값,,,,,</li>
+                                        <li>row-gap, column-gap : 그리드 셀, 셀 사이의 간격 지정</li>
+                                        <li>기본형 row-gap : 크기, column-gap : 크기</li>
+                                    </ul>
+                                </li>
+                                <li>그리드 레이아웃 정렬 속성
+                                    <ul>
+                                        <li>align-items 속성
+                                            <ul>
+                                                <li>그리드 아이템 전체를 셀의 세로 방향으로 정렬</li>
+                                                <li>stretch : 그리드 아이템과 셀을 채우도록 크기를 늘림</li>
+                                                <li>start : 그리드 아이템을 그리드 셀의 맨 위에 배치</li>
+                                                <li>center : 그리드 아이템을 그리드 셀의 세로 방향 중아에 배치</li>
+                                                <li>end : 그리드 아이템을 그리드 셀의 맨 아래에 배치</li>
+                                            </ul>
+                                        </li>
+                                        <li>align-self 속성 
+                                            <ul>
+                                                <li>각각의 그리드 아이템을 셀의 세로 방향으로 정렬</li>
+                                            </ul>
+                                        </li>
+                                        <li>place-item 속성
+                                            <ul>
+                                                <li>align-items, justify-items 속성을 한 번에 적용</li>
+                                                <li>기본형 place-items : align-items, justify-items</li>
+                                                <li>예) place-items : center, end</li>
+                                            </ul>
+                                        </li>
+                                        <li>place-slef 속성
+                                            <ul>
+                                                <li>align-self, justify-self 속성을 한 번에 적용</li>
+                                                <li>기본형 place-self : align-self, justify-self</li>
+                                                <li>예) place-self : center end</li>
+                                            </ul>
+                                        </li>
+                                        <li>상대적인 크기 단위
+                                            <ul>
+                                                <li>fr 단위 : 컬럼/줄의 크기 지정시 px 단위는 반응형 웹 디자인에 적합치않음
+                                                    -> 상대적인 크기 지정하는 fr(fraction) 단위 사용
+                                                </li>
+                                                <li>예) 너비 비율 2:1:2 인 컬럼 3개 배치
+                                                    -> grid-template-columns: 2fr 1fr 2fr;
+                                                </li>
+                                                <li>repeat() 함수
+                                                    -> 똑같은 내용이 반복될 때 사용
+                                                </li>
+                                                <li>예) grid-template-columns:repeat(3, 1fr)</li>
+                                            </ul>
+                                        </li>
+                                        <li>컬럼 갯수 조절
+                                            <ul>
+                                                <li>컬럼 너비 설정시에 auto-fit, auto-fill 이용하면 컬럼 개수를 조절할 수 있음</li>
+                                                <li>auto-fit : 남는 공간 없이 꽉 채우기</li>
+                                                <li>auto-fill : 컬럼의 최소 너비까지만 표시하고 남는 공간은 그대로 둠</li>
+                                                <li>예) 너비 200px 인 컬럼을 화면에 가득 채우기 
+                                                    -> grid-template-columns:repeat(auto-fit, 200px);
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    그리드 레이아웃의 배치 속성
+                                    <ul>
+                                        <li>
+                                            grid-tempalte-areas 속성
+                                            <ul>
+                                                <li>그리드 레이아웃에서 행과 열을 이름으로 지정</li>
+                                                <li>grid-area 속성 : 그리드 아이템에 이름을 지정</li>
+                                                <li>기본형 grid-area : 행, 열 이름으로</li>
+                                            </ul>
+                                        </li>
+                                        <li>grid-column-start, grid-column-end 속성
+                                            <ul>
+                                                <li>그리드 레이아웃에서 열의 시작 번호와 끝번호 지정</li>
+                                            </ul>
+                                        </li>
+                                        <li>grid-row-start, grid-row-end 속성
+                                            <ul>
+                                                <li>그리드 레이아웃에서 행의 시작과 끝 번호 지정</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            그리드 라인 : 그리드 컨테이너를 구성하는 행과 열을 그리는 선
+                                        </li>
+                                        <li>그리드 넘버 : 그리드 라인에 있는 고유 번호</li>
+                                        <li>
+                                            grid-column 속성 : grid-column-start, grid-column-end 속성을 한 번에 적용
+                                            <ul>
+                                                <li>기본형 grid-column: start end</li>
+                                                <li>기본형 grid-column: start/span 열개수</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            grid-row 속성 : grid-row-start, grid-row-end 속성을 한 번에 적용
+                                            <ul>
+                                                <li>grid-row : start end</li>
+                                                <li>grid-row : start/span 행개수</li>
+                                            </ul>
+                                        </li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+        <li></li>
+    </ul>
+</body>
+</html>
