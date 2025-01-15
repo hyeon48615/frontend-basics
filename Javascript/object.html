@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>객체(Object)</h1>
+    <ul>
+        <li>특징
+            <ul>
+                <li>프로그램에서 인식할 수 있는 모든 대상</li>
+                <li>데이터를 저장하고, 처리하는 기본 단위</li>
+                <li>
+                    <ul>
+                        <li>키/값 으로 구성된 속성들의 집합</li>
+                        <li>{} 이용하여 생성</li>
+                        <li>키는 문자열로 작성(공백이 존재할 경우 반드시 "로 묶어줘야 함)</li>
+                        <li>모든 자료형의 데이터를 값으로 가질 수 있음</li>
+                    </ul>
+                </li>
+                <li>빈 객체 : 속성이 하나도 없는 객체 {}</li>
+            </ul>
+        </li>
+        <li>자바스크립트 객체
+            <ul>
+                <li>자바스크립트 안에 객체를 미리 정의해 놓은 것</li>
+                <li>문서객체모델(DOM) : 문서뿐 아니라. 문서 안에 포함된 요소 모두를 별도의 객체 관리</li>
+                <li>브라우저 관련 객체 : 웹 브라우저 정보를 객체로 관리</li>
+                <li>내장 객체 : 웹 프로그램에서 자주 사용하는 요소를 미리 객체로 정의해 놓음</li>
+            </ul>
+        </li>
+        <li>사용자 정의 객체
+            <ul>
+                <li>필요할 때마다 사용자가 직접 만드는 객체</li>
+            </ul>
+        </li>
+        <li>객체의 인스턴스 만들기
+            <ul>
+                <li>객체는 자체가 아니고 인스턴스 형태로 만들어서 사용</li>
+                <li>인스턴스 : 객체를 틀처럼 사용해서 같은 모양으로 찍어낸 것</li>
+                <li>기본형 변수명 = new 객체명</li>
+            </ul>
+        </li>
+        <li> 객체의 속성
+            <ul>
+                <li>대괄호 연산자로 접근
+                    <ul>
+                        <li>[] 사용하여 객체의 속성에 접근</li>
+                        <li>배열에서도 사용 가능</li>
+                        <li>객체의 속성에 적븐 객체명['키'] 으로 사용</li>
+                    </ul>
+                </li>
+                <li>마침표(.) 연산자로 접근
+                    <ul>
+                        <li>. 를 이용하여 접근</li>
+                        <li>객체.속성명 형태로 사용</li>
+                        <li>속성명에 공백이 있으면 마침표(.) 는 사용불가</li>
+                    </ul>
+                </li>
+                <li>객체의 속성 값 : 키로 속성에 접근하여 값을 재할당
+                    예) 객체.속성 = 값, 객체['속성'] = 값;
+                </li>
+                <li>객체에 속성 추가
+                    <ul>
+                        <li>이미 생성된 객체에 동적으로 속성 추가 가능</li>
+                        <li>객체의 속성이 이미 존재하는지 확인 후 새로운 객체 속성을 추가,
+                            키 = 값 형태
+                        </li>
+                    </ul>
+                </li>
+                <li>객체의 속성 삭제
+                    <ul>
+                        <li>객체 속성에 접근할 때 앞에 delete 키워드를 명시</li>
+                    </ul>
+                </li>
+                <li>데이터 관리 방법
+                    <ul>
+                        <li>깊은 복사
+                            <ul>
+                                <li>기본 자료형의 데이터를 관리할 때 사용</li>
+                                <li>복사한 값을 재할당할 때 한쪽의 데이터가 변경되어도 서로 영향을 미치지 않음</li>
+                            </ul>
+                        </li>
+                        <li>얕은 복사
+                            <ul>
+                                <li>참조 자료형의 데이터를 관리할 때 사용</li>
+                                <li>한 쪽의 데이터가 바뀌면 다른 쪽의 데이터도 변경되어 서로 영향을 줌</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>내장 객체
+            <ul>
+                <li>Array 객체
+                    <ul>
+                        <li>생성방법
+                            <ul>
+                                <li>초기값 없는 경우
+                                    <ul>
+                                        <li>let nos = new Array();
+                                            nos[0] = 1;
+                                            nos[1] = 2;
+                                        </li>
+                                        <li>let nos = new Array(4); --> 크기 지정 가능</li>
+                                    </ul>
+                                </li>
+                                <li>초기값이 있을 경우
+                                    <ul>
+                                        <li>let vars = ["1", "2", "3"];</li>
+                                        <li>let vars = Array("1", "2", "3");</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>메서드
+                            <ul>
+                                <li>concat : 기존 배열에 요소를 추가해 새로운 배열을 만듦</li>
+                                <li>every : 배열에 모든 요소가 주어진 함수에 대하여 참이면 true, 아니면 false</li>
+                                <li>filter : 배열 요소 중에서 주어진 필터 함수에 대하여 true 인 요소만 골라 새로운 배열을 생성</li>
+                                <li style="color: red;">forEach : 배열의 모든 요소에 대하여 주어진 함수를 실행</li>
+                                <li style="color: red;">indexOf : 주어진 값과 일치하는 값이 있는 첫 번째 요소의 인덱스를 반환</li>
+                                <li>join : 배열 요소를 문자열로 합침. 구분자 지정이 가능</li>
+                                <li style="color: red;">push : 배열의 맨 끝에 새로운 요소를 추가한 후 새로운 length 를 반환</li>
+                                <li style="color: red;">unshift : 배열의 시작 부분에 새로운 요소 추가</li>
+                                <li style="color: red;">pop : 배열의 마지막 요소를 꺼내 그 값을 리턴</li>
+                                <li style="color: red;">shift : 배열의 첫 번째 요소를 꺼내 그 값을 리턴</li>
+                                <li>reverse : 배열의 배치 순서를 역순으로 바꿈</li>
+                                <li>sort : 배열 요소를 지정한 조건에 따라 정렬</li>
+                                <li style="color: red;">toString : 배열에서 지정한 부분을 문자열로 반환.
+                                    각 요소는 쉼표(,)로 구분
+                                </li>
+                            </ul>
+                        </li>
+                        <li>concat 메서드
+                            <ul>
+                                <li>배열끼리 합치는 용도</li>
+                                <li>서로 다른 배열 2개를 합쳐서 새로운 배열을 생성</li>
+                                <li>기존 배열에는 영향을 주지 않음</li>
+                                <li>a + b => c</li>
+                            </ul>
+                        </li>
+                        <li>join 메서드
+                            <ul>
+                                <li>배열 내부 요소끼리 합치는 메서드</li>
+                                <li>배열 요소를 연결해서 하나의 문자열로 생성</li>
+                                <li>요소 사이에 원하는 구분자를 넣을 수 있음</li>
+                                <li>구분자를 지정하지 않으면 쉼표(,)로 구분</li>
+                            </ul>
+                        </li>
+                        <li>push 메서드 : 배열 마지막에 요소 추가. 길이 변경. 배열 변경</li>
+                        <li>unshift 메서드 : 배열의 맨 앞에 요소 추가. 길이 변경. 배열 변경</li>
+                        <li>pop 메서드 : 배열 마지막 요소 꺼내기. 꺼낸 요소 반환. 배열 변경</li>
+                        <li>shift 메서드 : 배열 맨 앞쪽 요소 꺼내기. 꺼낸 요소 반환. 배열 변경</li>
+                        <li style="color: red;">slice 메서드
+                            <ul>
+                                <li>배열 중간의 요소를 추출</li>
+                                <li>새로운 배열의 결과를 반환</li>
+                                <li>slice 인자 1개 일 때 : 지정한 인덱스부터 맨 끝 요소까지 반환</li>
+                                <li>slice 인자 2개 일 때 : 앞에 값의 인덱스부터 뒤에 값의 인덱스까지의 요소를 반환</li>
+                                <li>기본형 배열.slice(시작인덱스[, 끝 인덱스])</li>
+                            </ul>
+                        </li>
+                        <li>splice 메서드
+                            <ul>
+                                <li>지정한 인덱스의 배열 요소 중 추가, 삭제할 수 있음</li>
+                                <li>새로운 배열을 반환</li>
+                                <li>값 1개 : 인덱스 위치부터 끝까지 반환</li>
+                                <li>값 2개 : 시작인덱스부터, 삭제할 개수</li>
+                                <li>값 3개 이상 : 시작인덱스부터, 삭제할 개수, 추가할 요소</li>
+                                <li>기본형 배열.splice(시작인덱스[, 삭제할 개수, 추가할 요소])</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Date 객체
+                    <ul>
+                        <li>기본형 변수명 = new Date();</li>
+                        <li>특정 날짜 지정 : new Date("2025-01-15")</li>
+                        <li>시간 지정 : new Date("2025-01-15T14:50:59")</li>
+                        <li>데이터 스트링 포맷에 따른 양식
+                            <ul>
+                                <li>YYYY-MM-DD : 년도-월-일(2025-01-15),
+                                    new Date("2025-01-15")
+                                </li>
+                                <li>YYYY-MM-DDTHH : 년도-월-일T14:00:00</li>
+                                <li>MM/DD/YYYY : 월/일/년도</li>
+                                <li>이름 형식 : new Date("Mon Jan 20 2025")</li>
+                            </ul>
+                        </li>
+                        <li>날짜 정보 조회
+                            <ul>
+                                <li>getFullYear() : 년도 4자리</li>
+                                <li>getMonth() : 0~11 까지 숫자반환 1~12월(0~11)</li>
+                                <li>getDate() : 1일 ~ 31일</li>
+                                <li>getDay() : 요일, 0~6 숫자 반환, 일요일: 0, 토요일: 6</li>
+                                <li>getTime() : 1970년 1월 1일 자정 기준 밀리초로 표시</li>
+                                <li>getHours() : 0~23 사이 숫자, 시</li>
+                                <li>getMinutes() : 0~59 사이 숫자, 분</li>
+                                <li>getSeconds() : 0~59 사이 숫자, 초</li>
+                                <li>getMilliSeconds() : 0~999 사이 숫자, 밀리초</li>
+                            </ul>
+                        </li>
+                        <li>날짜 정보 설정
+                            <ul>
+                                <li>setFullYear() : 년도 4자리 설정</li>
+                                <li>setMonth() : 0~11 숫자 설정, 월</li>
+                                <li>setDate() : 1~31일 사이 숫자, 일</li>
+                                <li>setDay() : 요일, 0~6 숫자 반환, 일요일: 0, 토요일: 6</li>
+                                <li>setTime() : 1970년 1월 1일 자정 기준 밀리초로 표시</li>
+                                <li>setHours() : 0~23 사이 숫자, 시</li>
+                                <li>setMinutes() : 0~59 사이 숫자, 분</li>
+                                <li>setSeconds() : 0~59 사이 숫자, 초</li>
+                                <li>setMilliSeconds() : 0~999 사이 숫자, 밀리초</li>
+                            </ul>
+                        </li>
+                        <li>형식 변경
+                            <ul>
+                                <li>toLocaleString() : 현재 날짜와 시간으로 현지 시간(local time)으로 표시</li>
+                                <li>toString() : Date 객체 타입을 문자열로 표시</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Math 객체
+                    <ul>
+                        <li>수학 관련과 관련된 메서드</li>
+                        <li>인스턴스를 만들지 않고 직접 사용</li>
+                        <li>프로퍼티
+                            <ul>
+                                <li>PI : 원주율</li>
+                                <li>SQRT2 : 제곱근</li>
+                            </ul>
+                        </li>
+                        <li>메서드
+                            <ul>
+                                <li>abs() : 절대값</li>
+                                <li>ceil() : 소수점 이하 부분 올림</li>
+                                <li>floor() : 소수점 이하 버림</li>
+                                <li>max() : 최대값 반환</li>
+                                <li>min() : 최소값 반환</li>
+                                <li>random() : 0과 1 사이의 무작위 수 반환</li>
+                                <li>round() : 소수점 이하 반올림</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>객체</h2>
+
+    <script>
+        // let now = new Date();
+        // document.write(`현재 시간 : ${now}`);
+
+        // let car = { 'maker':'현대', 'model':'genesis', 'color':'black', 'cc':2500, 'car sheet':'blown' };
+        // console.log('색상 : ' + car.color);
+        // console.log('색상 : ' + car['color']);
+        // console.log('car sheet : ' + car['car sheet'])
+
+        // 1. concat 메서드
+        // let nums = [1,2,3];
+        // let chars = ["a", "b", "c"];
+        
+        // let nochar = nums.concat(chars);
+        // let charno = chars.concat(nums);
+
+        // document.write("nums + chars : ", nochar, "<br>");
+        // document.write("chars + nums : ", charno, "<br>");
+
+        // 2. join 메서드
+        // let num2 = [1,2,3];
+        // let char2 = ["무궁화", "꽃이", "피었습니다", "."];
+        // let str1 = num2.join();
+        // document.write("구분자 없이 : ", str1, "<br>");
+        // let str2 = char2.join('');
+        // document.write("구분자 지정 : ", str2, "<br>");
+
+        // 3. push, pop, unshift, shift 메서드
+        // let char = ["a", "b", "c", "d"];
+        // console.log(char);
+
+        // let pop1 = char.pop();
+        // console.log(char);
+        // console.log(pop1);
+
+        // let shift1 = char.shift();
+        // console.log(char);
+        // console.log(shift1);
+
+        // let push1 = char.push('e'); // 변경된 Array의 사이즈 반환
+        // console.log(char);
+        // console.log(push1); 
+
+        // let unshift1 = char.unshift('a`'); // 변경된 Array의 사이즈 반환
+        // console.log(char);
+        // console.log(unshift1);
+
+        // 4. slice 메서드
+        // let num1 = [1, 2, 3, 4, 5];
+        // let num2 = num1.slice(2);
+        // console.log("num1 : ", num1);
+        // console.log("num2 : ", num2);
+
+        // let str1 = ["a", "b", "c", "d"];
+        // let str2 = str1.slice(1, 3);
+        // console.log("str1 : ", str1);
+        // console.log("str2 : ", str2);
+
+        // 5. splice 메서드
+        let str1 = ["a", "b", "c", "d", "e"];
+        console.log("str1 : ", str1);
+
+        let str2 = str1.splice(1);
+        console.log("str1 : ", str1);
+        console.log("str1.splice : ", str2);
+
+        str1 = ["a", "b", "c", "d", "e"];
+
+        let str3 = str1.splice(1, 2);
+        console.log("str1 : ", str1);
+        console.log("str1.splice : ", str3);
+
+        str1 = ["a", "b", "c", "d", "e"];
+
+        let str4 = str1.splice(1, 2, "f", "g");
+        console.log("str1 : ", str1);
+        console.log("str1.splice : ", str4);
+    </script>
+</body>
+</html>

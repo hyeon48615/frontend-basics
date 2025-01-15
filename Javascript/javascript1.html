@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: blue;
+        }
+    </style>
+    <!--
+        자바스크립트를 body 하단에 작성하는 이유: 
+        - 인터프리터 언어이기 때문에 head에 작성하면 DOM이 로딩되지 않아 객체를 찾을 수 없음.
+        - 서드파티 라이브러리는 head에 import 가능.
+    -->
+</head>
+<body>
+    <h1>자바스크립트 작성</h1>
+    <ul>
+        <li>1. 웹문서 안에 작성
+            <ul>
+                <li>&lt;script&gt; 태그와 &lt;/script&gt; 태그 안에 작성</li>
+                <li>웹 문서의 어느 곳에든 위치할 수 있지만 주로 참조하는 개체의 뒤쪽에 작성하며,
+                    &lt;/body&gt; 태그 앞에 작성한다.</li>
+                <li>자바스크립트 소스가 작성된 위치에서 실행됨</li>
+            </ul>
+        </li>
+        <li>2. 외부 스크립트 파일에 작성
+            <ul>
+                <li>자바스크립트 소스를 별도의 파일(.js) 로 만들어 참조</li>
+                <li>기본형 &lt;script src="스크립트 파일경로"&gt;&lt;/script&gt;</li>
+                <li></li>
+            </ul>
+        </li>
+        <li>개발 표준 가이드
+            <ul>
+                <li>자바스크립트에서 개발 가이드가 더 필요한 이유는 디버깅이 불편하다.</li>
+                <li>오픈소스로 개발하거나, 외부의 다른 사람과 공유 시 가독성과 관리가 편리하다.</li>
+                <li>팀 프로젝트 진행 시, 정규화된 코딩 규칙이 필요하다.</li>
+                <li>유지보수가 용이하고, 비용 절감 효과를 가져올 수 있다.</li>
+                <li>구글 스타일 가이드나, 혹은 다른 개발사의 가이드를 참조한다.</li>
+                <li>구글 스타일 가이드 : https://google.github.io/styleguide/jsguide.html</li>
+                <li>에어비앤비 스타일가이드 : https://github.com/tipjs/javascript-style-guide</li>
+            </ul>
+        </li>
+        <li>개발 규칙
+            <ul>
+                <li>들여쓰기를 맞춘다. -> 사람을 위한 부분</li>
+                <li>세미콜론으로 구분</li>
+                <li>구문 사이에 공백 등을 넣어서 가독성을 높인다.</li>
+                <li>주석을 활용한다.</li>
+                <li>언어별 시스템 규칙에 맞추어서 코딩을 진행한다.</li>
+                <li>개발 가이드와 현업이 다른 경우 현업이 우선시되어야 한다.</li>
+                <li>Javascript는 디버깅이 불편하므로, console 로그를 최대한 활용한다.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        alert("스크립트가 동작합니다.");
+    </script>
+</body>
+</html>

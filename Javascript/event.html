@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>회원가입</legend>
+            <label>이름 : <input type="text" name="name" id="name" onfocus="fEvent()" onkeyup="kEvent()" onblur="bEvent()" /></label><br>
+            <label for="gender">성별 : </label>
+            <input type="radio" name="gender" id="gender_0" value="남" />남
+            <input type="radio" name="gender" id="gender_1" value="여" />여<br>
+        </fieldset>
+    </form>
+
+    <script>
+        function fEvent(obj) {
+            console.log("포커스가 주어졌습니다.");
+        }
+
+        function kEvent() {
+            console.log("keyup event 발생");
+        }
+
+        function bEvent() {
+            console.log("blur 발생");
+        }
+    </script>
+</body>
+</html>

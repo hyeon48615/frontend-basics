@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // (function(){
+        //     var name = prompt("이름을 입력하세요: ");
+        //     document.write("<span>" + name + "</span> 님")
+        // }());
+
+        // (function init(){
+        //     console.log("초기화함수 호출");
+        // })();
+        // init(); // 재호출 불가
+
+        // add(); // 호이스팅으로 인해 실행되는 것처럼 보임
+        // function add() {
+        //     var num1 = 10;
+        //     var num2 = 20;
+        //     var sum = num1 + num2;
+        //     console.log("결과 : " + sum);
+        // }
+
+        // printM(); // 호이스팅으로 인해 실행되는 것처럼 보임
+        // function printM() {
+        //     console.log("hello");
+        // }
+
+        // let sum = 100; // 스코프 범위가 달라 영향을 끼치지 못함
+
+        // function add(n) {
+        //     let sum = 0;
+        //     for(let i=1; i<=n; i++) {
+        //         sum += i;
+        //     }
+        //     console.log(sum);
+        // }
+        // add(10);
+
+        // var x = 10;
+        // function hoisting() {
+        //     console.log("x: " + x);
+        //     console.log("y: " + y);
+        //     let y = 20; // 호이스팅이 일어나지 않아 오류 발생
+        // }
+        // hoisting();
+
+        // function add(a, b) {
+        //     const a = 10;
+        //     const b = 10;
+        //     // 재할당이 불가능하여 오류 발생
+        //     a = a;
+        //     b = b;
+        // }
+        // add(10, 20);
+
+        // 문제 1.
+        // a 와 b 를 입력 받아서 처리하는 함수를 구현하시오.
+        // +, -, *, / 수행하는 함수
+        // 결과를 리턴받아서 console.log 를 이용하여 출력하세요.
+
+        // function add(a, b) {
+        //     return a + b;
+        // }
+        // function sub(a, b) {
+        //     return a - b;
+        // }
+        // function mul(a, b) {
+        //     return a * b;
+        // }
+        // function div(a, b) {
+        //     return a / b;
+        // }
+        // const a = 10;
+        // const b = 2;
+        // console.log(
+        //     `+: ${add(a, b)}, -: ${sub(a, b)}, *: ${mul(a, b)}, /: ${div(a, b)}`
+        // );
+
+        // function cal(t, a, b) {
+        //     let rtn = 0;
+        //     switch(t) {
+        //         case "+": rtn = a + b; break;
+        //         case "-": rtn = a - b; break;
+        //         case "*": rtn = a * b; break;
+        //         case "/": rtn = a / b; break;
+        //         default: rtn = 0;
+        //     }
+        //     return rtn;
+        // }
+        // console.log(cal('+', 10, 5));
+        // console.log(cal('-', 10, 5));
+        // console.log(cal('*', 10, 5));
+        // console.log(cal('/', 10, 5));
+
+        // 문제 2.
+        // 1~50 중 하나를 입력받아 팩토리얼을 계산하여 출력하는 함수를 작성하시오.
+        // function fact(n) {
+        //     let num;
+        //     n != null ? num = n : num = prompt("숫자를 입력하세요(1~50)");
+
+        //     let rtn = 1;
+        //     while(true) {
+        //         if(num < 1) break;
+        //         rtn *= num;
+        //         num--;
+        //     }
+        //     return rtn;
+        // }
+        // console.log(fact());
+
+        function fact(n){
+            let no = 1;
+            n != null ? no=n : no=prompt("숫자를 입력하세요(1~50) : ");
+
+            let i=1;
+            let rtn = 1;
+            while(true){
+                rtn *= i++;
+                if(i>no) break;
+            }
+            return rtn;
+        }
+        console.log(fact());
+    </script>
+</body>
+</html>

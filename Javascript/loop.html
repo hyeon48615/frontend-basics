@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>반복문</h1>
+    <ul>
+        <li>for문
+            <ul>
+                <li>기본형 for(초기값; 조건; 증가값) { 실행문; }</li>
+                <li>초기값 : 카운터 변수를 초기화</li>
+                <li>조건 : 명령을 반복하기 위한 조건 체크</li>
+                <li>증가값 : 명령의 반복 수행. 보통 1씩 증가</li>
+                <li>중첩된 for문 기본형 
+                    for(초기값; 조건; 증가값) { 
+                        for(초기값; 조건; 증가값) { 실행문; }
+                    }
+                </li>
+                <li>for~in 구문</li>
+                <li>for-of 구문</li>
+            </ul>
+        </li>
+        <li>while문
+            <ul>
+                <li>조건을 체크하고 true 면 {} 의 구문 실행</li>
+                <li>조건 false 면 {} 은 실행되지 않음</li>
+                <li>기본형
+                    whild (조건) {
+                        실행구문;
+                    }
+                </li>
+            </ul>
+        </li>
+        <li>do ~ whild문
+            <ul>
+                <li>일단 명령을 한 번 실행 후 조건 체크</li>
+                <li>조건이 true 면 {} 안의 구문 실행</li>
+                <li>조건이 false 여도 {} 구문은 최소 한 번은 실행</li>
+                <li>기본형
+                    do {
+
+                    } while (조건);
+                </li>
+            </ul>
+        </li>
+        <li>break
+            <ul>
+                <li>종료 조건이 되기 전에 반복문을 빠져나와야 할 때 사용</li>
+                <li>기본형 break;</li>
+            </ul>
+        </li>
+        <li>continue
+            <ul>
+                <li>조건에 해당하는 값을 만나면 반복문의 맨 앞으로 이동
+                    -> 반복 과정을 한 차례 건너뛰는 효과
+                </li>
+                <li>기본형 continue;</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>반복문</h2>
+    <script>
+        // var sum = 0;
+        // sum += 1; //sum = sum + 1;
+        // sum += 2;
+        // sum += 3;
+        // sum += 4;
+        // sum += 5;
+        // document.write("1부터 5까지의 합은 : " + sum);
+
+        // var sum2 = 0;
+        // for(var i=1; i<=100; i++) {
+        //     sum2 += i;
+        // }
+        // document.write("<br> 1부터 100까지의 합은 : " + sum2)
+    </script>
+
+    <h2>중첩된 for문</h2>
+    <style>
+        p {
+            display: inline-block;
+            width: 100px;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <script>
+        // 1. 중첩 for 문
+        // for(var i=0; i<10; i++) {
+        //     document.write(`<br>i : ${i}`);
+        //     for (var j=0; j<2; j++) {
+        //         document.write(`<br>j : ${j}`);
+        //     }
+        // }
+
+        // 2. 구구단(세로)
+        // for(var i=2; i<=9; i++) {
+        //     document.write(`${i}단<br>`);
+        //     for(var j=1; j<=9; j++) {
+        //         document.write(`${i} X ${j} = ${i*j}<br>`);
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // 3. 구구단(가로)
+        for(var j=2; j<=5; j++) {
+            document.write(`<p>${j}단</p>`);
+        }
+        document.write("<br>");
+        for(var i=1; i<=9; i++) {
+            for(var j=2; j<=5; j++) {
+                document.write(`<p>${j} X ${i} = ${j*i}</p>`);
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+        for(var j=6; j<=9; j++) {
+            document.write(`<p>${j}단</p>`);
+        }
+        document.write("<br>");
+        for(var i=1; i<=9; i++) {
+            for(var j=6; j<=9; j++) {
+                document.write(`<p>${j} X ${i} = ${j*i}</p>`);
+            }
+            document.write("<br>");
+        }
+    </script>
+
+    <h2>while 문</h2>
+    <script>
+        // var no = prompt("숫자를 입력하세요 : ");
+        var no = 4;
+        if (no != null) {
+            var nfact = 1;
+            var i = 1;
+            // while (i <= no) {
+            //     nfact *= i;
+            //     i++;
+            // }
+
+            // for(var i=1; i<=no; i++) {
+            //     nfact *= i;
+            // }
+
+            do {
+                nfact *= i;
+                i++;
+            } while(i <= no);
+
+            msg = no + "! = " + nfact;
+        } else {
+            msg = "입력된 값이 없습니다.";
+        }
+        document.write(msg + "<br>");
+
+        // document.write("구구단<br>");
+        // var i = 2;
+        // while(i<=9) {
+        //     var j = 1;
+        //     document.write(`${i}단<br>`);
+        //     while(j <=9) {
+        //         document.write(`${i} X ${j} = ${i*j}<br>`);
+        //         j++;
+        //     }
+        //     document.write("<br>");
+        //     i++;
+        // }
+    </script>
+
+    <h2>break문</h2>
+    <script>
+        for(var i=1; i<=9; i++) {
+            document.write(`i: ${i}<br>`);
+            if (i > 5) break;
+        }
+        var i = 1;
+        while (true) {
+            document.write(`i: ${i}<br>`);
+            i++;
+            if (i > 5) break;
+        }
+    </script>
+    
+    <h2>continue문</h2>
+    <script>
+        var n = 10;
+        var sum = 0
+        for(var i=1;  i<=n; i++) {
+            if (i % 2 == 1) continue;
+            sum += i;
+        }
+        document.write("짝수의 합 : " + sum);
+
+        var i = 0;
+        sum = 0;
+        while(true) {
+            i++;
+            if (i > n) break;
+            if (i % 2 == 0) continue;
+            sum += i;
+        }
+        document.write("홀수의 합 : " + sum);
+    </script>
+
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td {
+            min-width: 100px;
+        }
+    </style>
+
+    <script>
+        document.write("<table>");
+        for(var i=0; i<=9; i++) {
+            document.write("<tr>");
+            for(var j=2; j<=9; j++) {
+                if(i == 0) {
+                    document.write(`<td style="text-align: center">${j}단</td>`)
+                } else {
+                    document.write(`<td>${j} X ${i} = ${j*i}</td>`);
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+
+    <script>
+        document.write("<h3> 1번 문제</h3>")
+        document.write("<table>");
+        for(var i=2; i<=9; i++) {
+            document.write("<tr>");
+            for(var j=0; j<=9; j++) {
+                if(j == 0) {
+                    document.write(`<td style="background-color: yellow; text-align: center;">${i}단</td>`)
+                } else {
+                    document.write(`<td style="text-align: right;">${i} X ${j} = ${i*j}</td>`);
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");   
+
+        document.write("<h3> 2번 문제</h3>")
+        document.write("<table>");
+            for(var i=0; i<=9; i++) {
+            document.write("<tr>");
+            for(var j=2; j<=9; j++) {
+                if(i == 0) {
+                    document.write(`<td style="text-align: center">${j}단</td>`)
+                } else {
+                    if(j == 3 && i % 2 == 0) continue;
+                    if(j == 2 && i % 2 == 0) {
+                        document.write(`<td colspan="2" style="background-color: yellow; text-align: center;">
+                                            ${j} X ${i} = ${j*i}
+                                            ${j+1} X ${i} = ${(j+1)*i}
+                                        </td>`);
+                    } else {
+                        document.write(`<td>${j} X ${i} = ${j*i}</td>`);
+                    }
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");  
+
+        document.write("<h3> 3번 문제</h3>")
+        document.write("<table>");
+            for(var i=0; i<=9; i++) {
+            document.write("<tr>");
+            for(var j=2; j<=9; j++) {
+                if(i == 0) {
+                    document.write(`<td style="text-align: center">${j}단</td>`)
+                } else {
+                    if(j == 8 && i % 2 == 1) continue;
+                    if(j == 7 && i % 2 == 1) {
+                        document.write(`<td colspan="2" style="background-color: yellow; text-align: center;">
+                                            ${j} X ${i} = ${j*i}
+                                            ${j+1} X ${i} = ${(j+1)*i}
+                                        </td>`);
+                    } else {
+                        document.write(`<td>${j} X ${i} = ${j*i}</td>`);
+                    }
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");  
+
+        document.write("<h3> 4번 문제</h3>")
+        document.write("<table>");
+        for(var i=2; i<=9; i++) {
+            document.write("<tr>");
+            for(var j=0; j<=9; j++) {
+                if(i == 3 && j == 0) continue;
+                if(i == 2 && j == 0) {
+                    document.write(`<td rowspan="2" style="background-color: yellow; text-align: center;">${i}단 ${i+1}단</td>`)
+                } else if (j == 0) {
+                    document.write(`<td style="background-color: yellow; text-align: center;">${i}단</td>`)
+                } else {
+                    document.write(`<td style="text-align: right;">${i} X ${j} = ${i*j}</td>`);
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");  
+    </script>
+
+    <script>
+        // 풀이
+        document.write("<table>");
+        document.write("<caption style='text-align:left'>1번문제</caption>");
+        // document.write("<tr>");
+        // for(var i=2; i<=9; i++) {
+        //     document.write("<td style='text-align:center'>");
+        //     document.write(`${i} 단`);
+        //     document.write("</td>");
+        // }
+        // document.write("</tr>");
+        for(var i=2; i<=9; i++) {
+            document.write("<tr>");
+            document.write("<td style='text-align:center'>");
+            document.write(`${i} 단`);
+            document.write("</td>");
+            for(var j=1; j<=9; j++) {
+                document.write("<td>");
+                document.write(`${i} x ${j} = ${i*j}`);
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        //2번문제
+        var cols="2";
+        document.write("<br><br><table>");
+        document.write("<caption style='text-align:left'>2번문제</caption>");
+        document.write("<tr>");
+        for(var i=2; i<=9; i++) {
+            document.write("<td style='text-align:center'>");
+            document.write(`${i} 단`);
+            document.write("</td>");
+        }
+        document.write("</tr>");
+        for(var j=1; j<=9; j++) {
+            document.write("<tr>");
+            for(var i=2; i<=9; i++) {
+                if ( i == 2 || i == 3 ) {
+                    if ( j % 2 == 0 ) {
+                        document.write(`<td colspan=${cols} style='background-color:yellow;text-align:center'>`);
+                        document.write(`${i} x ${j} = ${i*j}`);
+                        i++;
+                        document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+                        document.write(`${i} x ${j} = ${i*j}`);
+                        document.write("</td>");
+                    } else {
+                        document.write(`<td>`);
+                        document.write(`${i} x ${j} = ${i*j}`);
+                        document.write("</td>");
+                    }
+                } else {
+                    document.write(`<td>`);
+                    document.write(`${i} x ${j} = ${i*j}`);
+                    document.write("</td>");
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+
+        //3번문제
+        document.write("<br><br><table>");
+        document.write("<caption style='text-align:left'>3번문제</caption>");
+        document.write("<tr>");
+        for(var i=2; i<=9; i++) {
+            document.write("<td style='text-align:center'>");
+            document.write(`${i} 단`);
+            document.write("</td>");
+        }
+        document.write("</tr>");
+        for(var j=1; j<=9; j++) {
+            document.write("<tr>");
+            for(var i=2; i<=9; i++) {
+                if ( i == 7 || i == 8 ) {
+                    if ( j % 2 == 1 ) {
+                        document.write(`<td colspan=${cols} style='background-color:yellow;text-align:center'>`);
+                        document.write(`${i} x ${j} = ${i*j}`);
+                        i++;
+                        document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+                        document.write(`${i} x ${j} = ${i*j}`);
+                        document.write("</td>");
+                    } else {
+                        document.write(`<td>`);
+                        document.write(`${i} x ${j} = ${i*j}`);
+                        document.write("</td>");
+                    }
+                } else {
+                    document.write(`<td>`);
+                    document.write(`${i} x ${j} = ${i*j}`);
+                    document.write("</td>");
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+
+        //4번문제
+        document.write("<table>");
+        document.write("<caption style='text-align:left'>4번문제</caption>");
+        for(var i=2; i<=9; i++) {
+            document.write("<tr>");
+            for(var j=1; j<=9; j++) {
+                if ( j==1 ) {
+                    if ( i==2 || i== 5 || i==8 ) {
+                        document.write("<td rowspan='2' style='background-color:yellow;text-align:center'>");
+                        document.write(`${i} 단`);
+                        document.write(`<br>${i+1} 단`);
+                        document.write("</td>");
+                    } else if ( i==4 || i== 7 ) {
+                        document.write("<td style='text-align:center'>");
+                        document.write(`${i} 단`);
+                        document.write("</td>");
+                    }
+                }
+                document.write("<td>");
+                document.write(`${i} x ${j} = ${i*j}`);
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 800px;
+        }
+        .detail {
+            height: 300px;
+            display: none;
+        }
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="item" class="container">
+        <img src="img/cat1.jpg">
+        <button id="btnShowDetail" onclick="showDetail()">상세정보</button>
+        <div id="desc" class="detail">
+            <h4>상세정보</h4>
+            <img src="img/cat2.webp">
+            <p>상세 내용은 아래와 같습니다.</p>
+            <button id="btnHideDetail" onclick="hideDetail()">상세 설명 닫기</button>
+        </div>
+    </div>
+
+    <script>
+        function showDetail() {
+            let desc = document.getElementById('desc');
+            desc.style.display = 'block';
+
+            document.querySelector('#btnShowDetail').style.display = 'none';
+        }
+
+        function hideDetail() {
+            let desc = document.querySelector('#desc');
+            desc.style.display = 'none';
+
+            document.getElementById('btnShowDetail').style.display = 'inline';
+        }
+    </script> -->
+
+    <style>
+        .red-color {
+            color: red;
+        }
+        .blud-color {
+            color: blue;
+        }
+        .fsize20 {
+            font-size: 20px;
+        }
+    </style>
+
+    <h2>요소 노드 선택</h2>
+    <div id="div1">
+        <h3>title</h3>
+        <p id="textContent">text-1</p>
+        <p id="innerText">text-2</p>
+        <p id="innerHtml" onmouseover="mOver('innerHtml')" onmouseout="mOut('innerHtml')">innerHtml</p>
+    </div>
+
+    <!-- <script>
+        let div1 = document.querySelector('#div1');
+        console.log(div1);
+
+        console.log(div1.children.length);
+
+        let child1 = div1.children[0];
+        console.log(child1);
+
+        child1.style.backgroundColor = "red";
+    </script> -->
+
+    <script>
+        let cont1 = document.querySelector('#textContent');
+        cont1.textContent = "<strong>textContent</strong> 속성";
+        
+        let cont2 = document.querySelector('#innerText');
+        cont2.innerText = "<strong>innerText</strong> 속성";
+        cont2.classList.add("red-color", "fsize20");
+        cont2.classList.remove("fsize20");
+        
+        let cont3 = document.querySelector('#innerHtml');
+        cont3.innerHTML = "<strong>innerHTML</strong> 속성";
+        // 1. 마우스오버시에 색상, 사이즈를 바꾸는 코드를 작성
+        function mOver(id) {
+            let content = document.getElementById(id);
+            content.classList.add("red-color", "fsize20");
+        }
+        // 2. 마우스아웃시에 색상을 제거하는 코드를 작성
+        function mOut(id) {
+            let content = document.getElementById(id);
+            content.classList.remove("red-color");
+        }
+    </script>
+</body>
+</html>

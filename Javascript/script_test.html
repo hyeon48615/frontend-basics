@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //alert("안녕하세요.");     // 질문창을 띄울 때 사용
+        //console.log("안녕하세요?");   // 디버깅시 로그 확인용으로 사용
+        // var conf_str = confirm("작성 내용을 전송하시겠습니까?");
+        // if (conf_str) {
+        //     alert("확인완료");
+        // } else {
+        //     alert("취소");
+        // }
+
+        //var p = prompt("이름을 입력하세요. : ");
+        //console.log("이름 : ", p);
+
+        var str1 = '작은 따옴표로 묶고 "큰따옴표를 내부에 둡니다"';
+        var str2 = "큰 따옴표로 묶고 '작은따옴표를 내부에 둡니다'";
+        var str3 = "이스케이프 문자를 사용하여 \" 큰따옴표를 처리합니다.";
+        //console.log(str);
+        console.log(str1);
+        console.log(str2);
+        console.log(str3);
+
+        str4 = "문자열1";
+        str5 = "문자열2";
+        console.log(str4 + str5);
+        
+        str1 = 10;
+        str2 = "abc";
+        str3 = 40;
+        str4 = "50";
+        console.log(str1 + str2);
+        console.log(str2 + str1);
+        console.log(str1 + str3);
+        console.log(str3 + str4);
+        
+        str4 = `문자열을
+        여러 행으로 써도
+        인식을 합니다.`;
+        console.log(str4);
+
+        str5 = `백틱 안에 표현식으로 출력이 가능합니다.
+        ${str1}, ${str2}, ${str3}
+        출력이 가능합니다.`;
+        console.log(str5);
+
+        str1 = true;  //1
+        str2 = false;   // 0
+        console.log(str1 + str2);
+
+        str1 = [80, 90, 70, 60];
+        console.log(str1[0]);
+        console.log(JSON.stringify(str1));
+
+        str1 = null;
+        console.log(str1);
+
+        str1 = {
+            kor:80, eng:90, math:70, sci:95, "t tt":78
+        };
+        console.log(str1.kor);
+        console.log(str1['kor']);
+        console.log(str1['t tt']);
+        console.log(JSON.stringify(str1));
+
+        var str;
+        console.log(str);
+    </script>
+
+    <!-- <script src="test.js"></script> -->
+
+    <script>
+        var name = "홍길동";
+        document.write("<h1>자바스크립트연습</h1>");
+        document.write("<b><big>"+ name + "</big></b> 입니다.<br>");
+        var now = new Date();
+        var today = now.toLocaleTimeString();
+        document.write("현재 시각 : "+ today);
+    </script>
+
+    <button id="btn">클릭이벤트</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var btn = document.querySelector("#btn");
+        btn.onclick=function() {
+            btn.style.backgroundColor = "yellow";
+        };
+
+    </script>
+</body>
+</html>
