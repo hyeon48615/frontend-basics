@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        div {
+            margin-top: 10px;
+        }
+
+        div[id|="cont"] {
+            padding: 20px;
+            background-clip: border-box;
+        }
+
+        #container {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        #divMenu {
+            width: 100%;
+            height: 60px;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: baseline;
+        }
+        #divMenu > h1 {
+            margin-right: auto;
+        }
+        #ulMenu > li {
+            display: inline-block;
+            list-style-type: none;
+            width: 100px;
+            line-height: 40px;
+            text-align: center;
+        }
+        #ulMenu > li:hover {
+            font-weight: bold;
+            font-size: 20px;
+            animation: rainbow 3s infinite;
+        }
+        @keyframes rainbow {
+            0% { color: #ff2a2a; }
+            15% { color: #ff7a2a; }
+            30% { color: #ffc52a; }
+            45% { color: #43ff2a; }
+            60% { color: #2a89ff; }
+            75% { color: #202082; }
+            90% { color: #6b2aff; } 
+            100% { color: #e82aff; }
+        }
+        #cont-1 {
+            display: none;
+            background-color: aqua;
+        }
+        #cont-2 {
+            display: none;
+            background-color: chartreuse;
+        }
+        #cont-3 {
+            display: none;
+            background-color: violet;
+        }
+        #cont-4 {
+            display: none;
+            background-color: azure;
+        }
+
+        table, tr, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            width: 100px;
+            height: 30px;
+        }
+
+        form, fieldset {
+            padding: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+        input, textarea {
+            width: 200px;
+        }
+        input[id*="addr"] {
+            width: 306px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="divMenu">
+            <h1>나의 소개</h1>
+            <ul id="ulMenu">
+                <li onclick="menuDisplay(1)">메뉴1</li>
+                <li onclick="menuDisplay(2)">메뉴2</li>
+                <li onclick="menuDisplay(3)">메뉴3</li>
+                <li onclick="menuDisplay(4)">메뉴4</li>
+            </ul>
+        </div>
+        <div id="cont-1" class="content">
+            <h2>컨텐츠1</h2>
+            <p>컨텐츠 영역 1번 입니다.</p>
+            <img id="img1" src=""/>
+        </div>
+        <div id="cont-2" class="content">
+            <h2>컨텐츠2</h2>
+            <p>컨텐츠 영역 2번 입니다.</p>
+            <div id="tbl1">
+            </div>
+        </div>
+        <div id="cont-3" class="content">
+            <h2>컨텐츠3</h2>
+            <p>컨텐츠 영역 3번 입니다.</p>
+            <div id="detail">
+                ..
+            </div>
+        </div>
+        <div id="cont-4" class="content">
+            <h2>회원가입</h2>
+            <form name="formRegist" id="formRegist">
+                <fieldset>
+                    <legend>회원가입</legend>
+                    <label for="id">아이디</label>
+                    <input type="text" name="userid" id="userid" maxlength="20"
+                            placeholder="아이디를 입력하세요."/>
+                    <br>
+        
+                    <label for="password">비밀번호</label>
+                    <input type="password" name="userpw" id="userpw" maxlength="20"
+                            placeholder="비밀번호를 입력하세요."/>
+                    <br>
+      
+                    <br>
+                    <label for="email1">이메일 : </label>
+                    <input type="text" name="email1" id="email1" value="" maxlength="200" 
+                                placeholder="이메일을 입력하세요." />
+                    <span>@</span>
+                    <select name="email2" id="email2" onchange="emailDisplay();">
+                        <option value="">선택</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                        <option value="hotmail.com">hotmail.com</option>
+                        <option value="직접입력">직접입력</option>
+                    </select>
+                    <input type="text" name="email3" id="email3" value="" maxlength="100"
+                                placeholder="이메일 주소를 입력하세요" disabled style="display: none;"/>
+                    <br>
+        
+                    <br>
+                    <label for="addr1">주소 : </label>
+                    <br>
+                    <input type="text" name="addr1" id="addr1" value="" maxlength="100" 
+                        placeholder="주소를 입력하세요." />
+                    <br>
+                    <input type="addr2" name="addr2" id="addr2" value="" maxlength="100" 
+                        placeholder="상세 주소를 입력하세요." />
+
+                    <br>
+                    <label for="zipcode">우편번호 : </label>
+                    <input type="text" name="zipcode" id="zipcode" value="" maxlength="7"
+                            placeholder="우편번호를 입력하세요" />
+                    
+                    <br>
+                    <label for="hobby_0">취미 : </label>
+                    <input type="radio" name="hobby" id="hobby_0" value="승마" /> 승마
+                    &nbsp;<input type="radio" name="hobby" id="hobby_1" value="골프" /> 골프
+                    &nbsp;<input type="radio" name="hobby" id="hobby_2" value="여행" /> 여행
+                    &nbsp;<input type="radio" name="hobby" id="hobby_3" value="등산" /> 등산
+                    
+                    <br>
+                    <label for="interest_0">관심사항 : </label>
+                    <input type="checkbox" name="interest" id="interest_0" value="경제" /> 경제
+                    &nbsp;<input type="checkbox" name="interest" id="interest_1" value="정치" /> 정치
+                    &nbsp;<input type="checkbox" name="interest" id="interest_2" value="과학" /> 과학
+                    &nbsp;<input type="checkbox" name="interest" id="interest_3" value="공연" /> 공연
+
+                    <br>
+                    <label for="itnroduce">자기소개 : </label>
+                    <textarea name="introduce" id="introduce" wrap="hard"></textarea>
+                </fieldset>
+                <br/>
+      
+                <input type="submit" value="회원가입"/>
+                <input type="reset" value="초기화"/>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function menuDisplay(menu_no) {
+            // let container = document.getElementById('container');
+            // for(let i=0; i<container.children.length; i++) {
+            //     // container.children[i].id != "divMenu" ? container.children[i].style.display = "none" : "";
+            //     if ( container.children[i].id != "divMenu" ) {
+            //     container.children[i].style.display = "none";
+            //     } 
+            // }
+
+            let menus = document.querySelectorAll('.content');
+            menus.forEach(menu => {
+                menu.style.display = 'none';
+            });
+
+            let menu = document.getElementById('cont-'+menu_no);
+            menu.style.display = 'block';
+
+            switch(menu_no) {
+                case 1 : setImg(); break;
+                case 2 : setTable(); break;
+                case 3 : setGugu(); break;
+            }
+        }
+
+        function setImg() {
+            let img = document.getElementById('img1');
+            img.src = "img/cat1.jpg";
+            // img.setAttribute("src", "img/cat1.jpg");
+            img.style.width = '100%';
+
+            // let arrImg = [];
+            // let img = document.getElementById('imag1');
+            // let temp_no = Math.floor(Math.random()*(arrImg.length));
+            // console.log(temp_no);
+            // if (img != null) {
+            //     img.src = "img/" + arrImg[temp_no];
+            //     img.width = '100%';
+            // }
+        }
+        
+        function setTable() {
+            let table = document.getElementById('tbl1');
+            table.innerHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>제목1</th>
+                            <th>제목2</th>
+                            <th>제목3</th>
+                            <th>제목4</th>
+                            <th>제목5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td rowspan="2"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            `
+        }
+        
+        function setGugu() {
+            let detail = document.getElementById('detail');
+            
+            let detailHTML = "<table>";
+            for(let i=2; i<=9; i++) {
+                detailHTML += `<tr><td style='text-align:center'>${i}단</td>`;
+                for(var j=1; j<=9; j++) {
+                    detailHTML += `<td>${i} x ${j} = ${i*j}</td>`;
+                }
+                detailHTML += '</tr>';
+            }
+            detailHTML += "</table>";
+
+            detail.innerHTML = detailHTML;
+        }
+    
+        function emailDisplay() {
+            let email1 = document.getElementById("email1");
+            let email2 = document.getElementById("email2");
+            let email3 = document.getElementById("email3");
+            if ( email2.value == "직접입력" ) {
+                email3.style.display = "inline";
+                email3.disabled = false;
+            } else {
+                email3.style.display = "none";
+                email3.disabled = true;
+                email3.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* #container {
-            margin: 0 auto;
+        #container {
             width: 800px;
-        } */
-        #guguForm {
-            width: 500px;
             margin: auto;
+        }
+        #result {
+            margin: 10px auto;
+            width: 500px;
+        }
+        #guguForm {
+            margin: 10px auto;
+            width: 500px;
         }
         #guguForm li {
             list-style: none;
@@ -25,8 +29,15 @@
         #guguForm input {
             flex-grow: 1;
         }
-        #guguForm input[type="submit"] {
-            width
+        table {
+            margin: auto;
+        }
+        table, tr, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        td {
+            width: 100px;
         }
     </style>
 </head>
@@ -39,16 +50,16 @@
                 <ul>
                     <li>
                         <label for="start">시작 단</label>
-                        <input type="number" id="start" value="2"/>
+                        <input type="number" id="start" value="2" required/>
     
                     </li>
                     <li>
                         <label>마지막 단</label>
-                        <input type="number" id="end" value="9"/>
+                        <input type="number" id="end" value="9" required/>
                     </li>
                     <li>
                         <label>열 개수</label>
-                        <input type="number" id="col" value="4"/>
+                        <input type="number" id="col" value="4" required/>
                     </li>
                     <li><input type="submit" value="출력"/></li>
                 </ul>
@@ -56,68 +67,44 @@
         </form>
         <div id="result"></div>
     </div>
+
+    <script>
+        document.getElementById('guguForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const start = parseInt(document.getElementById('start').value);
+            const end = parseInt(document.getElementById('end').value);
+            const col = parseInt(document.getElementById('col').value);
+
+            generateTable(start, end, col);
+        });
+
+        function generateTable(start, end, col) {
+            let result = document.getElementById('result');
+
+            let tableHTML = "";
+            let currentRow = 1;
+            let dan = start;
+            for (let i=0; i<=9; i++) {
+                tableHTML += "<tr>";
+                for (let j=dan; j<=end; j++) {
+                    if (j == start + col * currentRow && i == 9) {
+                        currentRow++;
+                        i = 0; dan = j--;
+                        tableHTML += "</tr>";
+                        continue;
+                    }
+                    if (j == start + col * currentRow) break;
+                    if (i == 0) {
+                        tableHTML += `<td>${j}단</td>`;
+                    } else {
+                        tableHTML += `<td>${j} X ${i} = ${j*i}</td>`;
+                    }
+                }
+                tableHTML += "</tr>";
+            }
+            result.innerHTML = "<table>" + tableHTML + "</table>";
+        }
+    </script>
 </body>
 </html>
-
-// 4. 구구단(가로) - 개선 버전
-//         document.write(`
-//             <style>
-//                 li { list-style: none; }
-//             </style>
-//             <form id="guguForm">
-//                 <ul>
-//                     <li><label>시작 단 <input type="number" id="start" value="2"/><label></li>
-//                     <li><label>마지막 단 <input type="number" id="end" value="9"/><label></li>
-//                     <li><label>열 개수 <input type="number" id="col" value="4"/><label></li>
-//                     <li><input type="submit" value="출력"/></li>
-//                 </ul>
-//             </form>
-//         `);
-
-//         document.getElementById('guguForm').addEventListener('submit', (event) => {
-//             event.preventDefault();
-
-//             const start = parseInt(document.getElementById('start').value);
-//             const end = parseInt(document.getElementById('end').value);
-//             const col = parseInt(document.getElementById('col').value);
-
-//             if (isNaN(start) || isNaN(end) || isNaN(col)) {
-//                 alert("모든 입력값에 숫자를 입력하세요.");
-//                 return;
-//             }
-
-//             generate(start, end, col);
-//         });
-
-//         function generate(start, end, col) {
-//             var row = 0;
-
-//             let result = `
-//                 <style>
-//                     p {
-//                         display: inline-block;
-//                         width: 100px;
-//                         margin: 0px;
-//                         padding: 0px;
-//                     }
-//                 </style>
-//             `;
-//             for(var i=0; i<=9; i++) {
-//                 for(var j=(start+(row*col)); j<=end; j++) {
-//                     if (i == 0) {
-//                         result += `<p>${j}단</p>`;
-                     } else {
-                         result += `<p>${j} X ${i} = ${j*i}</p>`;
-                     }
-                     if (j == (start+(row*col))+col-1 && i ==9 ) {
-                         row++;
-                         i=0;
-                         result += '<br>';
-                         continue;
-                     }
-                     if (j == (start+(row*col))+col-1) break;
-                 }
-                 result += '<br>'
-             }
-             document.write(result);
-         }

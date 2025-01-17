@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자바스크립트</h1>
+
+    <script>
+        // alert("메시지를 출력합니다");
+
+        // let conf = confirm("사용자한테 확인을 받습니다.");
+        // conf ? console.log("확인") : console.log("취소");
+
+        // let no = prompt("디저트를 선택하세요. 1:과일 2:케이크 3:음료");
+        // switch(no) {
+        //     case "1" : console.log("과일을 선택하셨습니다."); break;
+        //     case "2" : console.log("케이크를 선택하셨습니다."); break;
+        //     case "3" : console.log("음료를 선택하셨습니다."); break;
+        //     default : console.log("메뉴를 선택하지 않았습니다."); break;
+        // }
+
+        // HTML 도큐먼트 상의 객체를 접근하는 방법
+        // 1. ID, CLASS, 태그
+        // document.getElementById();
+        // document.getElementsByClassName();
+        // document.getElementsByTagName();
+        // 2. 선택자(selector) : id(#), class(.)
+        // document.querySelector();
+        // document.querySelectorAll();
+        // let p1 = document.getElementById("p1");
+        // p1.style.backgroundColor = 'red';
+
+        // 1. 계절 변수 뒤에 영문으로 각각 추가하시오.
+        // 2. 영문으로 추가된 후에 한글로 된 계절명을 빼는 코드를 작성하세요.
+        let arrSeason = ["봄", "여름", "가을", "겨울"];
+
+        arrSeason.push("Spring", "Summer", "Autumn", "Winter");
+        console.log(arrSeason);
+
+        for (let i=0; i<4; i++) {
+            arrSeason.shift();
+        }
+        // arrSeason = arrSeason.slice(4);
+        console.log(arrSeason);
+
+        // 3. 함수
+        function addSeason(arr, add) {
+            for(let i=0; i<add.length; i++) {
+                arr.push(add[i]);
+            }
+            return arr;
+        }
+    </script>
+</body>
+</html>
