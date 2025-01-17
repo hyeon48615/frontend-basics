@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM 트리</h1>
+    <div id="container1">
+        <button id="btnText" onclick="innText();">innerText로 표시</button>
+        <button id="btnHTML" onclick="innHTML();">innerHTML로 표시</button>
+
+        <h2>현재시간</h2>
+        <div id="currentTime"></div>
+
+        <script>
+            let now = new Date();
+            function innText() {
+                document.getElementById('currentTime').innerText = now;
+                document.getElementById('currentTime').style.backgroundColor = "red";
+            }
+            function innHTML() {
+                document.getElementById('currentTime').innerHTML =
+                "<span><b><em>" + now + "</em></b></span>";
+                document.getElementById('currentTime').style.backgroundColor = "blue";
+            }
+        </script>
+    </div>
+
+    <style>
+        #container2 {
+            width: 600px;
+            margin: 0 auto;
+        }
+        #imgs {
+            width: 400px;
+            float: left;
+            margin: 20px 20px auto 10px;
+            padding: 0;
+        }
+        #big_img {
+            box-shadow: 1px 1px 2px orange;
+            outline: 1px dashed #ccc;
+            outline-offset: -7px;
+        }
+        #small_img {
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+        }
+        .small {
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+    <h2>이미지게시판 상세</h2>
+    <div id="container2">
+        <div id="imgs">
+            <img src="img/cat1.jpg" width="200" alt="cat1"  id="big_img"/>
+            <div id="small_img">
+                <img src="img/cat1.jpg" class="small" />
+                <img src="img/cat2.webp" class="small" />
+                <img src="img/kbs.jpg" class="small" />
+            </div>
+        </div>
+        <script>
+            let big_img = document.querySelector("#big_img");
+            let small_img = document.querySelectorAll(".small");
+
+            for (let i=0; i<small_img.length; i++) {
+                small_img[i].addEventListener("click", changeImg);
+            }
+
+            function changeImg() {
+                let thisImg = this.src;
+                // let tmpImgInfo = thisImg.split("/");
+                // let tmpImgInfo2 = tmpImgInfo[1].split("."); // tmpImgInfo2[0] -> 파일명, tmpImgInfo2[1] -> 확장자
+
+                // let tmpImgInfo3 = thisImg.substr(thisImg.lastIndexOf('/')+1, thisImg.length-thisImg.lastIndexOf('.')-1);
+
+                big_img.setAttribute("src", this.src);
+                big_img.setAttribute("alt", tmpImgInfo3);
+            }
+        </script>
+    </div>
+</body>
+</html>

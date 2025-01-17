@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>노드 추가/삭제</h1>
+
+    <div id="container">
+        <h2>DOM 트리</h2>
+        <!-- this.onclick=''; -> event.preventDefualt(); 와 같은 기능 -->
+        <a href="#" onclick="addParent(); this.onclick='';">P태그 추가하기</a>
+        <a href="#" onclick="addImg(); this.onclick='';">Img 추가하기</a>
+        <a href="#" onclick="removeImg();">Img 삭제하기</a>
+        <div id="info"></div>
+    </div>
+
+    <script>
+        function addParent() {
+            let p1 = document.createElement("p");
+            let p1txt = document.createTextNode("P 태그에 텍스트를 추가합니다.");
+            p1.appendChild(p1txt);
+
+            document.getElementById('info').appendChild(p1);
+        }
+
+        function addImg() {
+            // 1. 이미지 요소 생성
+            let imgTag = document.createElement("img");
+
+            // 2. src 속성, alt 속성 .... 생성
+            let imgSrc = document.createAttribute("src");
+            imgSrc.value = "img/cat1.jpg";
+
+            let imgAlt = document.createAttribute("alt");
+            imgAlt.value = "cat1";
+
+            let imgWidth = document.createAttribute("width");
+            imgWidth.value = "200px";
+
+            // 3. 이미지 요소에 연결
+            imgTag.setAttributeNode(imgSrc);
+            imgTag.setAttributeNode(imgAlt);
+            imgTag.setAttributeNode(imgWidth);
+
+            // 4. 요소 노드 연결
+            document.getElementById('info').appendChild(imgTag);
+        }
+
+        function removeImg() {
+            event.preventDefault();
+            event.stopPropagation();
+
+            let imgTag = document.getElementsByTagName('img');
+            
+            if (imgTag) {
+                for (let i of imgTag) {
+                    document.getElementById('info').removeChild(i);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
